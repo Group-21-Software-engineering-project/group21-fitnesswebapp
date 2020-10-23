@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>Software Engineering template</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'home/css/index.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'home/css/navigationBar.css' %}">
+        <script src="js/index.js"></script>
+    </head>
+    <body background="home/images/indexBackground.jpg">
+        <div class="navigationBar" id="navigationBar">
+            <a href="index.html" class="active">Home</a>
+            <a href="" class="active">Log in</a>
+            <a href="" class="active">Create Account</a>
+            <a href="" class="active">About us</a>
+        </div>
+        <section class="pageContent">
+            <h1>Fitness Tracker</h1>
+            <h2>A fitness tracker that allows you to record your physical activity,<br>nutrition and body stats</h2>
+        </section>
+    </body>
+</html>
