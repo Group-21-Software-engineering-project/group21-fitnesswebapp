@@ -1,0 +1,91 @@
+body {
+   background-image: url("loginBackground.png");
+   background-size: 100%;
+}
+
+.central-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 380px;
+    height: 380px;
+    position: relative;
+    margin: 6% auto;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    top: 100px;
+}
+
+.button-box {
+    width: 200px;
+    margin: 25px auto;
+    position: relative;
+    border-radius: 10px;
+}
+
+.toggle-button {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+#button {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background: white;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.input-group {
+    /*top: 120px;*/
+    padding-top: 30px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid black;
+    text-decoration: black;
+    outline: none;
+    background: transparent;
+}
+
+::placeholder {
+    color: black;
+}
+
+.submit-button {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: white;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#login {
+    left: 50px;
+}
+
+#signup {
+    left: 450px;
+}
