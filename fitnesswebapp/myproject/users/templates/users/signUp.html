@@ -1,11 +1,12 @@
 {% extends "home/base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
         
         <!-- Sign Up Form -->
-            <form id="signup" class="input-group central-box" method="POST">
+            <form id="signup" class="input-group content-section" method="POST">
                 {% csrf_token %}
                     <legend>Join Today!</legend>
-                    {{ form }}
+                    {{ form|crispy }}
                 <div>
                     <button type="submit" class="submit-button">Sign Up</button>
                 </div>

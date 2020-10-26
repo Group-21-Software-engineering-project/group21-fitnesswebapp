@@ -9,15 +9,24 @@
     <link rel="stylesheet" type="text/css" href="{% static 'home/css/navigationBar.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'home/css/loginSignUp.css' %}">
 </head>
+    <!---Navbar-->
     <body background="{% static 'home/images/indexBackground.jpg' %}">
         <div class="navigationBar" id="navigationBar">
-            <a href="index.html" class="active">Home</a>
+            <a href="/" class="active">Home</a>
             <a href="" class="active">Log in</a>
             <a href="/signup" class="active">Create Account</a>
             <a href="" class="active">About us</a>
         </div>
         <section class="pageContent">
-            {% block content %}{% endblock %}
+            <!--Sends back a sucess message when account is created-->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert" >
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% block content %}{% endblock %} <!--Pages that extend from base get added in this block-->
         </section>
     </body>
 </html>

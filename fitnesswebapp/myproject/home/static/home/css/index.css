@@ -14,3 +14,9 @@ h1 {
 h2 {
     font-size: 40px;
 }
+ 
+.alert {
+    padding: 20px;
+    background-color: #36f43f;
+    color: white;
+  }
