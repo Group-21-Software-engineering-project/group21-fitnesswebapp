@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineering template</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/navigationBar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/loginSignUp.css' %}">
+</head>
+    <body background="{% static 'home/images/indexBackground.jpg' %}">
+        <div class="navigationBar" id="navigationBar">
+            <a href="index.html" class="active">Home</a>
+            <a href="" class="active">Log in</a>
+            <a href="/signup" class="active">Create Account</a>
+            <a href="" class="active">About us</a>
+        </div>
+        <section class="pageContent">
+            {% block content %}{% endblock %}
+        </section>
+    </body>
+</html>
