@@ -1,5 +1,12 @@
 {% extends "home/base.html" %}
 {% block content %}
+    {% block additional_styles %}
+    <style>
+    body {
+        background-image: url(static/home/images/indexbackground.jpg);
+    }
+    </style>
+    {% endblock %}
      
 <h1>Fitness Tracker</h1>
 <h2>A fitness tracker that allows you to record your physical activity,<br>nutrition and body stats</h2>
