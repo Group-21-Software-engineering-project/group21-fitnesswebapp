@@ -2,17 +2,17 @@
 {% load crispy_forms_tags %}
 {% block content %}
         
-        <!-- Sign Up Form -->
+        <!-- Login Form -->
             <form id="signup" class="input-group content-section" method="POST">
                 {% csrf_token %}
-                    <legend>Join Today!</legend>
+                    <legend>Log In</legend>
                     {{ form|crispy }}
                 <div>
-                    <button type="submit" class="submit-button">Sign Up</button>
+                    <button type="submit" class="submit-button">Login</button>
                 </div>
                 <div>
                     <small>
-                        Already Have An Account? <a href="{% url 'login-page' %}">Log In</a>
+                        Need An Account? <a href="{% url 'signUp-page' %}">Log In</a>
                     </small>
                 </div>
             </form>
