@@ -1,12 +1,104 @@
 {% extends "home/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-        
+        <style>
+            body {
+                background-image: url(../static/home/images/loginBackground.png);
+            }
+
+            .pageContent {
+                font-family: 'Bebas Neue', cursive;
+                text-align: center;
+                color: #333333;
+            }
+
+            #signup {
+                background-color: rgb(200, 219, 250);
+                position: absolute;
+                top: 30%;
+                left: 41%;
+                width: 20%;
+                height: 55%;
+                margin: auto;
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1);
+                border-radius: 5%;
+            }
+
+            #join_header {
+                margin: 10px 0px;
+                font-size: large;
+            }
+
+            #id_username, #id_email, #id_password1, #id_password2 {
+                /* width: 85%;
+                border-left: 0;
+                border-top: 0;
+                border-right: 0;
+                border-bottom: 1px solid rgb(0, 0, 0);
+                outline: none;
+                background: transparent; */
+                width: 100%;
+                padding: 5px 0;
+                margin: 5px 0;
+                border-left: 0;
+                border-top: 0;
+                border-right: 0;
+                border-bottom: 1px solid rgb(0, 0, 0);
+                outline: none;
+                background: transparent;
+                color: black;
+            }
+            .requiredField {
+                float: left;
+            }
+
+            #hint_id_username {
+                padding-left: 40px;
+            }
+
+            #hint_id_password2 {
+                padding-left: 40px;
+            }
+
+            #hover-on-me {
+                display: none;
+            }
+
+            #help-button:hover + #hover-on-me {
+                display: block;
+                color: red;
+            }
+
+            .hide {
+                display: none;
+            }
+
+            .myDIV {
+                margin-left: 300px;
+            }
+
+            .myDIV:hover + .hide {
+                background-color: rgb(200, 219, 250);
+                /* top: 35%;
+                left: 70%;
+                width: 10%;
+                height: 20%; */
+                left: 600px;
+                display: block;
+                color: red;
+            }
+        </style>        
+
         <!-- Sign Up Form -->
             <form id="signup" class="input-group content-section" method="POST">
                 {% csrf_token %}
-                    <legend>Join Today!</legend>
+                    <legend id="join_header">Join Today! <!--<span class="myDIV">?</span> <span class="hide">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>--></legend>
+                    <div class="myDIV">?</div>
+                    <span class="hide">
+                        Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
+                    </span>
                     {{ form|crispy }}
+                    <!-- <div id="hover-on-me"><button id="help-button">?</button></div> -->
                 <div>
                     <button type="submit" class="submit-button">Sign Up</button>
                 </div>

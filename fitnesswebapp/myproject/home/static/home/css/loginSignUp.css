@@ -3,6 +3,10 @@ body {
    background-size: 100%;
 }
 
+#id_username {
+    color: red;
+}
+
 .central-box {
     background-color: rgba(255, 255, 255, 0.8);
     width: 380px;
