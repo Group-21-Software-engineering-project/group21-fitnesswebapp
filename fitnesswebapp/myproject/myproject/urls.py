@@ -18,18 +18,22 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from home import views as home_views
 from users import views as user_views
+from bodyStats import views as bodyStats_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
-    #home app views
+
+    # home app views
     path('', home_views.home, name="home-page"),
     path('about/', home_views.about, name="about-page"),
 
-    #users app views
+    # users app views
     path('signup/', user_views.signUp, name="signUp-page"),
     path('login/', auth_views.LoginView.as_view(template_name="users/login.html"), name="login-page"),
     path('logout/', auth_views.LogoutView.as_view(template_name="users/logout.html"), name="logout-page"),
     path('profile/', user_views.profile, name="profile-page"),
+
+    # bodyStats app views
+    path('bodyStats/', bodyStats_views.bodyStats, name="bodyStats-page"),
 
 ]
