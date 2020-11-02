@@ -15,7 +15,7 @@
             #signup {
                 background-color: rgb(200, 219, 250);
                 position: absolute;
-                top: 30%;
+                top: 20%;
                 left: 41%;
                 width: 20%;
                 height: 55%;
@@ -60,45 +60,63 @@
                 padding-left: 40px;
             }
 
-            #hover-on-me {
-                display: none;
+            .hiddenInfoBox {
+                position: absolute;
+                bottom: 0px;
+                width: 400px;
+                background: rgb(200, 219, 250);
+                padding: 20px;
+                box-sizing: border-box;
+                border-radius: 4%;
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.5s;
+                transform: translateX(100%) translateY(-150px);
+                align-items: center;
             }
 
-            #help-button:hover + #hover-on-me {
-                display: block;
-                color: red;
+            .toHide:hover .hiddenInfoBox {
+                visibility: visible;
+                opacity: 1;
             }
 
-            .hide {
-                display: none;
-            }
-
-            .myDIV {
-                margin-left: 300px;
-            }
-
-            .myDIV:hover + .hide {
-                background-color: rgb(200, 219, 250);
-                /* top: 35%;
-                left: 70%;
+            .qMark {
+                background: white;
                 width: 10%;
-                height: 20%; */
-                left: 600px;
-                display: block;
-                color: red;
+                height: 15%;
+                font-size: x-large;
+                margin: 0px;
+                float: right;
+                border-radius: 50%;
+            }
+
+            ul {
+                padding: 0px;
+                align-items: center;
+                text-align: center;
             }
         </style>        
 
         <!-- Sign Up Form -->
             <form id="signup" class="input-group content-section" method="POST">
                 {% csrf_token %}
-                    <legend id="join_header">Join Today! <!--<span class="myDIV">?</span> <span class="hide">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>--></legend>
-                    <div class="myDIV">?</div>
-                    <span class="hide">
-                        Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
-                    </span>
+                    <legend id="join_header">Join Today!</legend>
+                    <div class="toHide">
+                        <p class="qMark">?</p>
+                        <div class="hiddenInfoBox">
+                            <ul>
+                                <p>Username</p>
+                                <li>Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</li>
+                                <br>
+                                <p>Password</p>
+                                <li>Your password can’t be too similar to your other personal information.</li>
+                                <li>Your password must contain at least 8 characters.</li>
+                                <li>Your password can’t be a commonly used password.</li>
+                                <li>Your password can’t be entirely numeric.</li>
+                            </ul>
+                        </div>
+                    </div>
                     {{ form|crispy }}
-                    <!-- <div id="hover-on-me"><button id="help-button">?</button></div> -->
                 <div>
                     <button type="submit" class="submit-button">Sign Up</button>
                 </div>
