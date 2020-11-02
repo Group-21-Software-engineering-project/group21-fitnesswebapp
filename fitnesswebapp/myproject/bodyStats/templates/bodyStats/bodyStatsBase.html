@@ -8,30 +8,21 @@
     <link rel="stylesheet" type="text/css" href="{% static 'bodyStats/css/bodyStatsHome.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'bodyStats/css/navigationBar.css' %}">
 </head>
-    <!---Navbar-->
+    <!---Navigation bar-->
     <body>
-
         <div class="navigationBar" id="navigationBar">
             <a href="/" class="active">Home</a>
             <a href="{% url 'about-page' %}" class="active">About us</a>
-
             <a href="#" class="active">Exercise</a>
             <a href="{% url 'bodyStats-page' %}" class="active">Body Stats</a>
             <a href="#" class="active">Food</a>
             <a href="{% url 'profile-page' %}" class="active">Profile</a>
             <a href="{% url 'logout-page' %}" class="active">Logout</a>
-
         </div>
         <section class="pageContent">
-            <!--Sends back a success message when account is created-->
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="alert" >
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endif %}
-            {% block content %}{% endblock %} <!--Pages that extend from base get added in this block-->
+            {% block content %}
+                <!--Pages that extend from base get added in this block-->
+            {% endblock %}
         </section>
     </body>
 </html>
