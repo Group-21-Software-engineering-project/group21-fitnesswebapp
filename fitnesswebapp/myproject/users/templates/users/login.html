@@ -7,13 +7,13 @@
                 background-image: url(../static/home/images/loginBackground.png);
             }
 
-            #login {
+            #login-box {
                 background-color: rgb(200, 219, 250);
                 position: absolute;
                 top: 35%;
                 left: 41%;
-                width: 15%;
-                height: 35%;
+                width: 20%;
+                height: 40%;
                 margin: auto;
                 box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1);
                 border-radius: 5%;
@@ -39,6 +39,7 @@
 
             #small {
                 padding-top: 20px;
+                font-size: x-large;
             }
 
             .requiredField {
@@ -47,21 +48,21 @@
 
             #login-title {
                 padding-top: 15px;
-                font-size: large;
+                font-size: x-large;
             }
 
             .submit-button {
                 color: black;
-                width: 200px;
-                
+                width: 80%;
+                height: 20%;
             }
         </style>
 
-        <!--CSS-->
+        <!-- CSS -->
         <link rel="stylesheet" href="../home/static/home/css/loginSignUp.css">
 
         <!-- Login Form -->
-            <form id="login" class="input-group content-section" method="POST">
+            <form id="login-box" class="input-group content-section" method="POST">
                 {% csrf_token %}
                     <legend id="login-title">Log In</legend>
                     {{ form|crispy }}
