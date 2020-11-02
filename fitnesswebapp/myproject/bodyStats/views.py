@@ -6,3 +6,7 @@ from django.http import HttpResponse
 
 def bodyStats(request):
     return render(request, 'bodyStats/bodyStatsHome.html')
+
+
+def bodyStatsHistory(request):
+    return render(request, 'bodyStats/bodyStatsHistory.html')

@@ -35,5 +35,6 @@ urlpatterns = [
 
     # bodyStats app views
     path('bodyStats/', bodyStats_views.bodyStats, name="bodyStats-page"),
+    path('bodyStatsHistory/', bodyStats_views.bodyStatsHistory, name="bodyStatsHistory-page"),
 
 ]

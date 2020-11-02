@@ -2,5 +2,12 @@
 {% block content %}
 
 <h1>Body stats home page</h1>
+<div class="bodyStats" id="bodyStats">
+    <p>Current stats:</p>
+    <p>Weight: 70KG</p>
+    <p>Height: 175cm</p>
+    <p>BMI: 24</p>
+    <a href="{% url 'bodyStatsHistory-page' %}" class="active">Body progress</a>
+</div>
 
 {% endblock content %}
