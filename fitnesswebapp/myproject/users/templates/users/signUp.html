@@ -101,9 +101,13 @@
             <form id="signup" class="input-group content-section" method="POST">
                 {% csrf_token %}
                     <legend id="join_header">Join Today!</legend>
+                    <!-- The following will be hidden by a question mark, which when hovered over will show
+                            requirements for your Username and Password -->
                     <div class="toHide">
+                        <!-- Visible Question Mark -->
                         <p class="qMark">?</p>
                         <div class="hiddenInfoBox">
+                            <!-- Bullet points of Username and Password Information -->
                             <ul>
                                 <p>Username</p>
                                 <li>Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</li>
