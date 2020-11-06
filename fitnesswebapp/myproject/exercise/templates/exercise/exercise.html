@@ -2,6 +2,146 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-    <h1>Exercise Page</h1>
+    <!-- Left hand box -->
+    <div id="calendarbox">
+        <h1>Calendar Coming <br> Soon...</h1>
+    </div>
+    <!-- End of left hand box -->
+
+    <!-- Right hand box -->
+    <div id="info-box">
+        <p id="header">Day Clicked on Calendar</p>
+
+        <select name="exercise-time-hh" id="exerciseTimeHH">
+            <option selected disabled>HH</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+
+        <p id="colon">:</p>
+
+        <select name="exercise-time-mm" id="exerciseTimeMM">
+            <option selected disabled>MM</option>
+            <option value="0">0</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="55">55</option>
+        </select>
+
+        <select name="exercise-type" id="exerciseType">
+            <option selected disabled>Select an Exercise Type</option>
+            <option value="Cardio">Cardio</option>
+            <option value="Bench Press">Bench Press</option>
+            <option value="Sit Ups">Sit Ups</option>
+            <option value="Biceps">Biceps</option>
+        </select>
+
+        <form action="">
+            <input type="text" id="notesBox" name="fname"><br><br>
+        </form>
+
+        <button type="button" id="discardButton">Discard</button>
+
+        <button type="button" id="applyButton">Apply</button>
+    </div>
+    <!-- End of right hand box -->
+
+    <!-- CSS -->
+    <style>
+        /* Left hand box */
+        #body {
+            
+        }
+
+        #calendarbox {
+            position: absolute;
+            height: 100%;
+            width: 65%;
+            background-color: #414141;
+            margin-top: 0px;
+            
+            -moz-box-shadow:    inset 0 0 200px #333333;
+            -webkit-box-shadow: inset 0 0 200px #333333;
+            box-shadow:         inset 0 0 200px #333333;
+        }
+        /* End of left hand box */
+
+        /* right hand box */
+        #info-box {
+            background-color: #333333;
+            position: absolute;
+            width: 35%;
+            height: 100%;
+            right: 0%;
+            /* box-shadow: -10px 0px 10px 1px black; */
+        }
+
+        #header {
+            font-size: x-large;
+            text-align: center;
+            margin-top: 5%;
+        }
+
+        #exerciseType {
+            margin-top: 5%;
+            width: 80%;
+            height: 5%;
+            text-align: center;
+        }
+
+        #notesBox {
+            width: 80%;
+            margin-top: 5%;
+            height: 300px;
+        }
+
+        #discardButton {
+            width: 35%;
+            height: 6%;
+            margin-top: 4%;
+            border: 5px solid rgb(255, 154, 143);
+            margin-right: 10%;
+        }
+
+        #applyButton {
+            width: 35%;
+            height: 6%;
+            margin-top: 4%;
+            border: 5px solid rgb(152, 255, 143);
+        }
+
+        #exerciseTimeHH {
+            width: 34%;
+            height: 3%;
+            border-radius: 5%;
+            margin-top: 3%;
+        }
+
+        #colon {
+            display: inline;
+            text-align: center;
+        }
+
+        #exerciseTimeMM {
+            width: 34%;
+            height: 3%;
+            border-radius: 5%;
+            margin-top: 3%;
+        } 
+    </style>
 
 {% endblock content%}
