@@ -19,6 +19,7 @@ from django.urls import path, include
 from home import views as home_views
 from users import views as user_views
 from bodyStats import views as bodyStats_views
+from exercise import views as exercise_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,5 +37,8 @@ urlpatterns = [
     # bodyStats app views
     path('bodyStats/', bodyStats_views.bodyStats, name="bodyStats-page"),
     path('bodyStatsHistory/', bodyStats_views.bodyStatsHistory, name="bodyStatsHistory-page"),
+
+    #exercuse app views
+    path('exercise/', exercise_views.exercise, name="exercise-page"),
 
 ]
