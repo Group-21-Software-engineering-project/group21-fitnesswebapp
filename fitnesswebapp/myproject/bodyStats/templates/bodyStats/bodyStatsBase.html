@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness tracker body stats</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bodyStats/css/bodyStatsHome.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bodyStats/css/navigationBar.css' %}">
+</head>
+    <!---Navigation bar-->
+    <body>
+        <div class="navigationBar" id="navigationBar">
+            <a href="/" class="active">Home</a>
+            <a href="{% url 'about-page' %}" class="active">About us</a>
+            <a href="#" class="active">Exercise</a>
+            <a href="{% url 'bodyStats-page' %}" class="active">Body Stats</a>
+            <a href="#" class="active">Food</a>
+            <a href="{% url 'profile-page' %}" class="active">Profile</a>
+            <a href="{% url 'logout-page' %}" class="active">Logout</a>
+        </div>
+        <section class="pageContent">
+            {% block content %}
+                <!--Pages that extend from base get added in this block-->
+            {% endblock %}
+        </section>
+    </body>
+</html>

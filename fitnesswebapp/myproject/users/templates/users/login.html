@@ -1,18 +1,79 @@
 {% extends "home/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-        
+        <!-- Style -->        
+        <style>
+            body {
+                background-image: url(../static/home/images/loginBackground.png);
+                background-repeat: no-repeat;
+            }
+
+            #login-box {
+                background-color: rgb(200, 219, 250);
+                position: absolute;
+                top: 32%;
+                left: 39%;
+                width: 20%;
+                height: 40%;
+                margin: auto;
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1);
+                border-radius: 5%;
+            }
+
+            #id_username, #id_password {
+                width: 100%;
+                padding: 5px 0;
+                margin: 5px 0;
+                border-left: 0;
+                border-top: 0;
+                border-right: 0;
+                border-bottom: 1px solid rgb(0, 0, 0);
+                outline: none;
+                background: transparent;
+                color: black;
+            }
+
+            #div_id_username, #div_id_password {
+                padding-top: 20px;
+                color: black;
+                font-size: larger;
+            }
+
+            #small {
+                padding-top: 20px;
+                font-size: x-large;
+            }
+
+            .requiredField {
+                float: left;
+            }
+
+            #login-title {
+                padding-top: 15px;
+                font-size: x-large;
+            }
+
+            .submit-button {
+                color: black;
+                width: 80%;
+                height: 20%;
+            }
+        </style>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../home/static/home/css/loginSignUp.css">
+
         <!-- Login Form -->
-            <form id="signup" class="input-group content-section" method="POST">
+            <form id="login-box" class="input-group content-section" method="POST">
                 {% csrf_token %}
-                    <legend>Log In</legend>
+                    <legend id="login-title">Log In</legend>
                     {{ form|crispy }}
                 <div>
                     <button type="submit" class="submit-button">Login</button>
                 </div>
-                <div>
+                <div id="small">
                     <small>
-                        Need An Account? <a href="{% url 'signUp-page' %}">Log In</a>
+                        Need An Account? <a href="{% url 'signUp-page' %}">Sign Up</a>
                     </small>
                 </div>
             </form>

@@ -1,11 +1,125 @@
 {% extends "home/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-        
+        <style>
+            body {
+                background-image: url(../static/home/images/loginBackground.png);
+            }
+
+            .pageContent {
+                font-family: 'Bebas Neue', cursive;
+                text-align: center;
+                color: #333333;
+            }
+
+            #signup {
+                background-color: rgb(200, 219, 250);
+                position: absolute;
+                top: 20%;
+                left: 41%;
+                width: 20%;
+                height: 55%;
+                margin: auto;
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1);
+                border-radius: 5%;
+            }
+
+            #join_header {
+                margin: 10px 0px;
+                font-size: large;
+            }
+
+            #id_username, #id_email, #id_password1, #id_password2 {
+                /* width: 85%;
+                border-left: 0;
+                border-top: 0;
+                border-right: 0;
+                border-bottom: 1px solid rgb(0, 0, 0);
+                outline: none;
+                background: transparent; */
+                width: 100%;
+                padding: 5px 0;
+                margin: 5px 0;
+                border-left: 0;
+                border-top: 0;
+                border-right: 0;
+                border-bottom: 1px solid rgb(0, 0, 0);
+                outline: none;
+                background: transparent;
+                color: black;
+            }
+            .requiredField {
+                float: left;
+            }
+
+            #hint_id_username {
+                padding-left: 40px;
+            }
+
+            #hint_id_password2 {
+                padding-left: 40px;
+            }
+
+            .hiddenInfoBox {
+                position: absolute;
+                bottom: 0px;
+                width: 400px;
+                background: rgb(200, 219, 250);
+                padding: 20px;
+                box-sizing: border-box;
+                border-radius: 4%;
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.5s;
+                transform: translateX(100%) translateY(-150px);
+                align-items: center;
+            }
+
+            .toHide:hover .hiddenInfoBox {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .qMark {
+                background: white;
+                width: 10%;
+                height: 15%;
+                font-size: x-large;
+                margin: 0px;
+                float: right;
+                border-radius: 50%;
+            }
+
+            ul {
+                padding: 0px;
+                align-items: center;
+                text-align: center;
+            }
+        </style>        
+
         <!-- Sign Up Form -->
             <form id="signup" class="input-group content-section" method="POST">
                 {% csrf_token %}
-                    <legend>Join Today!</legend>
+                    <legend id="join_header">Join Today!</legend>
+                    <!-- The following will be hidden by a question mark, which when hovered over will show
+                            requirements for your Username and Password -->
+                    <div class="toHide">
+                        <!-- Visible Question Mark -->
+                        <p class="qMark">?</p>
+                        <div class="hiddenInfoBox">
+                            <!-- Bullet points of Username and Password Information -->
+                            <ul>
+                                <p>Username</p>
+                                <li>Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</li>
+                                <br>
+                                <p>Password</p>
+                                <li>Your password can’t be too similar to your other personal information.</li>
+                                <li>Your password must contain at least 8 characters.</li>
+                                <li>Your password can’t be a commonly used password.</li>
+                                <li>Your password can’t be entirely numeric.</li>
+                            </ul>
+                        </div>
+                    </div>
                     {{ form|crispy }}
                 <div>
                     <button type="submit" class="submit-button">Sign Up</button>
