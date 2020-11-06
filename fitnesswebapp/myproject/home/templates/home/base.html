@@ -15,7 +15,7 @@
         <div class="navigationBar" id="navigationBar">
             <a href="/" class="active">Home</a>
             <a href="{% url 'about-page' %}" class="active">About us</a>
-            <!---Checks if logged in or out-->
+            <!---Checks if logged in or out. Can only access if logged in-->
             {% if user.is_authenticated %}
             <a href="#" class="active">Exercise</a>
             <a href="{% url 'bodyStats-page' %}" class="active">Body Stats</a>
