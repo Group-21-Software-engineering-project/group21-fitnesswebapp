@@ -1,83 +1,5 @@
 {% extends "bodyStats/bodyStatsBase.html"%}
 {% block content %}
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-    h1 {
-        text-align: center;
-        padding-top: 10%;
-        font-size: 125px;
-        padding-bottom: 0%;
-    }
-
-    h2 {
-        font-size: 40px;
-    }
-
-    .bodyStats {
-        float: left;
-        border-style: solid;
-        border-color: #333333;
-        border-radius: 25px;
-        width: 45%;
-        margin: 40px;
-        height: 322px;
-    }
-
-    .inputBodyStats {
-        float: right;
-        border-style: solid;
-        border-color: #333333;
-        border-radius: 25px;
-        width: 45%;
-        margin: 40px;
-        height: 322px;
-    }
-
-    .updateBodyStats {
-
-    }
-
-    input[type=text], [type=number], [type=date] {
-        width: 75%;
-        padding: 12px;
-        margin: 8px;
-        display: inline-block;
-        border: 1px solid #333333;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-
-    select {
-        width: 20%;
-        padding: 12px;
-        margin: 8px;
-        display: inline-block;
-        border: 1px solid #333333;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-
-    .title {
-        font-family: 'Bebas Neue', cursive;
-        text-align: center;
-    }
-
-    .subTitle {
-        font-family: 'Bebas Neue', cursive;
-        font-size: 30px;
-        margin: 10px;
-    }
-
-    button {
-        width: 20%;
-        padding: 12px;
-        margin: 8px;
-        border: 1px solid #333333;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-</style>
 <h1 class="title">Body stats home page</h1>
 <div class="bodyStats" id="bodyStats">
     <h2 class="title">Current stats</h2>
@@ -89,12 +11,12 @@
     <h2 class="title">Update your body stats</h2>
     <form class="updateBodyStats" id="updateBodyStats" method="POST">
         <input type="number" placeholder="00.00" name="bodyStatWeight" required>
-        <select name="unit" id="unitHeight">
+        <select name="unitHeight" id="unitHeight">
             <option value="cm">cm</option>
             <option value="inches">inches</option>
         </select><br>
         <input type="number" placeholder="175" name="bodyStatHeight">
-        <select name="unit" id="unitWeight">
+        <select name="unitWeight" id="unitWeight">
             <option value="kg">kg</option>
             <option value="lb">lb</option>
         </select><br>

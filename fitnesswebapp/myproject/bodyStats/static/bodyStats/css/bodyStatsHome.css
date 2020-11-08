@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+    h1 {
+        text-align: center;
+        padding-top: 10%;
+        font-size: 125px;
+        padding-bottom: 0%;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    .bodyStats {
+        float: left;
+        border-style: solid;
+        border-color: #333333;
+        border-radius: 25px;
+        width: 45%;
+        margin: 40px;
+        height: 322px;
+    }
+
+    .inputBodyStats {
+        float: right;
+        border-style: solid;
+        border-color: #333333;
+        border-radius: 25px;
+        width: 45%;
+        margin: 40px;
+        height: 322px;
+    }
+
+    .updateBodyStats {
+
+    }
+
+    input[type=text], [type=number], [type=date] {
+        width: 75%;
+        padding: 12px;
+        margin: 8px;
+        display: inline-block;
+        border: 1px solid #333333;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    select {
+        width: 20%;
+        padding: 12px;
+        margin: 8px;
+        display: inline-block;
+        border: 1px solid #333333;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .title {
+        font-family: 'Bebas Neue', cursive;
+        text-align: center;
+    }
+
+    .subTitle {
+        font-family: 'Bebas Neue', cursive;
+        font-size: 30px;
+        margin: 10px;
+    }
+
+    button {
+        width: 20%;
+        padding: 12px;
+        margin: 8px;
+        border: 1px solid #333333;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
