@@ -10,18 +10,18 @@
 <div class="inputBodyStats" id="inputBodyStats">
     <h2 class="title">Update your body stats</h2>
     <form class="updateBodyStats" id="updateBodyStats" method="POST">
-        <input type="number" placeholder="enter your height" name="bodyStatHeight" required>
+        <input type="number" placeholder="enter your height" name="bodyStatHeight" id="bodyStatHeight" required>
         <select name="unitHeight" id="unitHeight">
             <option value="cm">cm</option>
             <option value="inches">inches</option>
         </select><br>
-        <input type="number" placeholder="enter your weight" name="bodyStatWeight">
+        <input type="number" placeholder="enter your weight" name="bodyStatWeight" id="bodyStatWeight">
         <select name="unitWeight" id="unitWeight">
             <option value="kg">kg</option>
             <option value="lb">lb</option>
         </select><br>
-        <input type="date" placeholder="date" name="bodyStatDate" min="1970-01-01" max="2021-06-31" required>
-        <button type="submit" name="bodyStatsUpdate" value="submit">update stats</button>
+        <input type="date" placeholder="date" name="bodyStatDate" id="bodyStatDate" min="1970-01-01" max="2021-06-31" required>
+        <button type="submit" name="bodyStatsUpdate" value="submit" onclick="validateBodyStats()">update stats</button>
         <br><br>
     </form>
 </div>
