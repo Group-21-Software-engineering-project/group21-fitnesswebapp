@@ -3,9 +3,9 @@
 <h1 class="title">Body stats home page</h1>
 <div class="bodyStats" id="bodyStats">
     <h2 class="title">Current stats</h2>
-    <p class="subTitle">Weight: 70 kg</p>
-    <p class="subTitle">Height: 175 cm</p>
-    <p class="subTitle">BMI: 24</p>
+    <a class="subTitle" href="{% url 'bodyStatsHistoryWeight-page' %}">Weight: 70 kg</a><br>
+    <a class="subTitle" href="{% url 'bodyStatsHistoryHeight-page' %}">Height: 175 cm</a><br>
+    <a class="subTitle" href="{% url 'bodyStatsHistoryBMI-page' %}">BMI: 24</a><br>
 </div>
 <div class="inputBodyStats" id="inputBodyStats">
     <h2 class="title">Update your body stats</h2>
