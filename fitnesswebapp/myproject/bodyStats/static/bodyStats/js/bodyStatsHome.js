@@ -1,9 +1,14 @@
 /**
  *
  * @function updateUserBodyStats()
- * This function get the data that the user has entered into the update body stats forms in bodyStatsHome.html.
+ * This function gets the data that the user has entered into the update body stats forms in bodyStatsHome.html.
  * To test that the js has gotten the correct values in the correct format, the users input is outputted to the console.
- * If the user has selected to to input their body stats
+ * The users height and weigh is validated to ensure that the value that the user has inputted is with a set range, to
+ * prevent problems from occurring if the users input negative values. If the user has selected to input their body
+ * stats in imperial, the function will convert their stats into metric and then rounds the users body stats to two
+ * decimal places. The function then calls upon the function calculateBMI() passing in values of the users height
+ * and weight. All of the users stats are then placed into an object updatedBodyStats. The object is then turned into
+ * a JSON object so it can then be sent to the back end of the website.
  *
  */
 
@@ -17,6 +22,14 @@ function updateUserBodyStats() {
 
     // console.log("Weight: " + bodyWeight + " " + bodyHeightUnit + "\nHeight: " + bodyHeight + " " + bodyWeightUnit + "\nDate: " + bodyStatsDate);
 
+    if (bodyHeight <= 135 || bodyHeight >= 200 ) {
+        alert("Please enter in a valid height");
+    }
+
+    if (bodyWeight <= 35 || bodyWeight >= 200) {
+        alert("Please enter in a valid weight");
+    }
+
     if (bodyWeightUnit === "lb") {
         const bodyWeightTemp = (bodyWeight * 2.205);
         bodyWeight = bodyWeightTemp.toFixed(2);
@@ -25,14 +38,6 @@ function updateUserBodyStats() {
     if (bodyHeightUnit === "inches") {
         const bodyHeightTemp = (bodyHeight * 2.54);
         bodyHeight = bodyHeightTemp.toFixed(2);
-    }
-
-    if (bodyHeight <= 135 || bodyHeight >= 200 ) {
-        alert("Please enter in a valid height");
-    }
-
-    if (bodyWeight <= 35 || bodyWeight >= 200) {
-        alert("Please enter in a valid weight");
     }
 
     const bodyStatsBMI = calculateBMI(bodyHeight, bodyWeight);
@@ -47,8 +52,8 @@ function updateUserBodyStats() {
 
     let updatedBodyStatsJSON = JSON.stringify(updatedBodyStats);
 
-    console.log(updatedBodyStats);
-    console.log(updatedBodyStatsJSON);
+    //console.log(updatedBodyStats);
+    //console.log(updatedBodyStatsJSON);
 
 }
 
