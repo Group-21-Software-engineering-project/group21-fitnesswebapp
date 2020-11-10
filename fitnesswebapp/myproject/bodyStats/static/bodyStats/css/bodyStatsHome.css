@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-    h1 {
+body {
+    background-image: url(../static/home/images/tempBodyStats.jpg);
+    background-repeat: no-repeat;
+}
+
+    /* UNDO WHEN COMPLETED CSS!! */
+    /* h1 {
         text-align: center;
         padding-top: 10%;
         font-size: 125px;
@@ -11,7 +17,34 @@
         font-size: 40px;
     }
 
-    .bodyStats {
+    #tableDivL {
+        float: left;
+        width: 50%;
+        height: 100vh;
+        background-color: pink;
+    }
+
+    #bodyStatsTR {
+        float: right;
+        width: 50%;
+        height: 50vh;
+        margin: 0%;
+        background-color: red;
+        text-align: center;
+    }
+
+    #inputBodyStatsBR {
+        float: right;
+        width: 50%;
+        height: 50vh;
+        margin: 0%;
+        background-color: blue;
+    } */
+
+    /* UNDO THE ABOVE COMMENTS FOR WORK LAST NIGHT */
+    /* BELOW IS OLD!! */
+
+    /* .bodyStats {
         float: left;
         border-style: solid;
         border-color: #333333;
@@ -19,12 +52,14 @@
         width: 45%;
         margin: 40px;
         height: 322px;
+
+        border: 3px dotted red;
     }
 
     .inputBodyStats {
         float: right;
         border-style: solid;
-        border-color: #333333;
+        border-color: red;
         border-radius: 25px;
         width: 45%;
         margin: 40px;
@@ -92,4 +127,4 @@
 
     a:active {
         text-decoration: underline;
-    }
+    } */
