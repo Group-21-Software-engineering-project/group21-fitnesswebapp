@@ -20,6 +20,7 @@ from home import views as home_views
 from users import views as user_views
 from bodyStats import views as bodyStats_views
 from exercise import views as exercise_views
+from foodTracker import views as foodTracker_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,8 +41,10 @@ urlpatterns = [
     path('bodyStatsHistoryHeight/', bodyStats_views.bodyStatsHistoryHeight, name="bodyStatsHistoryHeight-page"),
     path('bodyStatsHistoryWeight/', bodyStats_views.bodyStatsHistoryWeight, name="bodyStatsHistoryWeight-page"),
 
-
-    #exercuse app views
+    # exercise app views
     path('exercise/', exercise_views.exercise, name="exercise-page"),
+
+    # food tracker app views
+    path('foodTracker/', foodTracker_views.foodTracker, name="foodTacker-page"),
 
 ]
