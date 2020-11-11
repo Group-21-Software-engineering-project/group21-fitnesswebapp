@@ -1,7 +1,7 @@
 {% extends "bodyStats/bodyStatsBase.html"%}
 {% block content %}
 
-<!-- <style>
+<style>
     body {
                 background-image: url(../static/home/images/tempBodyStats.jpg);
                 background-repeat: no-repeat;
@@ -9,16 +9,15 @@
                 height: 900px;
                 background-size: 100% 100%;
     }
-</style> -->
+</style>
 
 <!-- UNCOMMENT WHEN COMPLETE!! -->
 
-<div id="content">
-    <h1>Body Stats</h1>
-    <!-- Table Div -->
+<!-- <div id="content">
+
     <div id="tableDivL">
         <table id="table">
-            <tr id="tableHeader">
+            <tr>
                 <th>Date</th>
                 <th>Height</th>
                 <th>Weight</th>
@@ -32,7 +31,7 @@
                 <td>27.2</td>
             </tr>
             
-            <tr id="ar">
+            <tr>
                 <td>14/09/2020</td>
                 <td>5ft 9in</td>
                 <td>83.6kg</td>
@@ -46,7 +45,7 @@
                 <td>27.2</td>
             </tr>
             
-            <tr id="ar">
+            <tr>
                 <td>28/09/2020</td>
                 <td>5ft 9in</td>
                 <td>83.6kg</td>
@@ -60,7 +59,7 @@
                 <td>27.2</td>
             </tr>
             
-            <tr id="ar">
+            <tr>
                 <td>12/10/2020</td>
                 <td>5ft 9in</td>
                 <td>83.6kg</td>
@@ -74,7 +73,7 @@
                 <td>27.2</td>
             </tr>
             
-            <tr id="ar">
+            <tr>
                 <td>26/10/2020</td>
                 <td>5ft 9in</td>
                 <td>83.6kg</td>
@@ -88,7 +87,7 @@
                 <td>27.2</td>
             </tr>
             
-            <tr id="ar">
+            <tr>
                 <td>09/11/2020</td>
                 <td>5ft 9in</td>
                 <td>83.6kg</td>
@@ -97,97 +96,33 @@
         </table>
     </div>
 
-    <!-- Current Stats -->
+
     <div class="bodyStats" id="bodyStatsTR">
-        <p id="currentStats">Current Stats</p>
-        <!-- Weight -->
+        <h2 class="title">Current stats</h2>
         <a class="subTitle" id="currentWeight" href="{% url 'bodyStatsHistoryWeight-page' %}">Weight: 70 kg</a><br>
-        <!-- Height -->
         <a class="subTitle" id="currentHeight" href="{% url 'bodyStatsHistoryHeight-page' %}">Height: 175 cm</a><br>
-        <!-- BMI -->
         <a class="subTitle" href="{% url 'bodyStatsHistoryBMI-page' %}">BMI: 24</a><br>
     </div>
 
-    <!-- Update Body Stats -->
     <div class="inputBodyStats" id="inputBodyStatsBR">
-        <p id="updateStats">Update Stats</p>
+        <h2 class="title">Update your body stats</h2>
         <form class="updateBodyStats" id="updateBodyStats" method="POST">
-            <!-- Height Input -->
             <input type="number" placeholder="enter your height" name="bodyStatHeight" id="bodyStatHeight" required>
             <select name="unitHeight" id="unitHeight">
                 <option value="cm">cm</option>
                 <option value="inches">inches</option>
             </select><br>
-            <!-- Weight Input -->
             <input type="number" placeholder="enter your weight" name="bodyStatWeight" id="bodyStatWeight">
             <select name="unitWeight" id="unitWeight">
                 <option value="kg">kg</option>
                 <option value="lb">lb</option>
             </select><br>
-            <!-- Date Input -->
             <input type="date" placeholder="date" name="bodyStatDate" id="bodyStatDate" min="1970-01-01" max="2021-06-31" required>
             <button type="button" name="bodyStatsUpdate" value="submit" onclick="updateUserBodyStats()">update stats</button>
             <br><br>
         </form>
     </div>
-</div>
+</div> -->
 
-<style>
-    body {
-        background-color: #393939;
-        width: 100%;
-        height: 750px;
-        margin: 0px auto;
-    }
-
-    h1 {
-        text-align: center;
-    }
-
-    #tableDivL {
-        float: left;
-        width: 50%;
-        height: 500px;
-    }
-
-    #table {
-        text-align: center;
-        margin: 10px auto;
-    }
-
-    #tableHeader {
-        background-color: #696969;
-    }
-
-    th {
-        padding: 10px 30px;
-    }
-
-    #ar {
-        background-color: #696969;
-    }
-
-    #bodyStatsTR {
-        float: right;
-        width: 50%;
-        height: 250px;
-    }
-
-    #currentStats {
-        color: white;
-        text-align: center;
-    }
-
-    #inputBodyStatsBR {
-        width: 50%;
-        float: right;
-        height: 250px;
-    }
-
-    #updateStats {
-        color: white;
-        text-align: center;
-    }
-</style>
 
 {% endblock content %}
