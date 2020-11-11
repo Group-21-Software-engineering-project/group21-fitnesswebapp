@@ -43,6 +43,8 @@ urlpatterns = [
 
     # exercise app views
     path('exercise/', exercise_views.exercise, name="exercise-page"),
+    path('calendar/', exercise_views.CalendarView.as_view(), name="calendar-page"),
+    path('testform/', exercise_views.log, name="test-form"),
 
     # food tracker app views
     path('foodTracker/', foodTracker_views.foodTracker, name="foodTacker-page"),
