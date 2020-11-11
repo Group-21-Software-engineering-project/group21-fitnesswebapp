@@ -1,7 +1,7 @@
 {% extends "bodyStats/bodyStatsBase.html" %}
 {% block content %}
 
-<style>
+<!-- <style>
     body {
                 background-image: url(../static/home/images/tempBodyStats.jpg);
                 background-repeat: no-repeat;
@@ -9,12 +9,13 @@
                 height: 900px;
                 background-size: 100% 100%;
     }
-</style>
+</style> -->
 
 <!-- UNCOMMENT WHEN COMPLETE!! -->
 
-<!-- <div id="content">
+<div id="content">
 
+    <!-- Table (Left) -->
     <div id="tableDivL">
         <table id="table">
             <tr>
@@ -96,33 +97,46 @@
         </table>
     </div>
 
-
+    <!-- Current Stats (Top Left) -->
     <div class="bodyStats" id="bodyStatsTR">
-        <h2 class="title">Current stats</h2>
-        <a class="subTitle" id="currentWeight" href="{% url 'bodyStatsHistoryWeight-page' %}">Weight: 70 kg</a><br>
-        <a class="subTitle" id="currentHeight" href="{% url 'bodyStatsHistoryHeight-page' %}">Height: 175 cm</a><br>
-        <a class="subTitle" href="{% url 'bodyStatsHistoryBMI-page' %}">BMI: 24</a><br>
+        <h2 id="cTitle">Current stats</h2>
+        <!-- Temporarily changin the a's to p's as I can't get margin working on a's -->
+        <!-- <a class="subTitle" id="currentHeight" href="{% url 'bodyStatsHistoryHeight-page' %}">Height: 175 cm</a><br> -->
+        <p id="currentHeight">Height: 175 cm</p>
+        <!-- <a class="subTitle" id="currentWeight" href="{% url 'bodyStatsHistoryWeight-page' %}">Weight: 70 kg</a><br> -->
+        <p id="currentWeight">Weight: 70 kg</p>
+        <!-- <a class="subTitle" id="currentBMI" href="{% url 'bodyStatsHistoryBMI-page' %}">BMI: 24</a><br> -->
+        <p id="currentBMI">BMI: 24</p>
     </div>
 
+    <!-- Update Stats (Bottom Right) -->
     <div class="inputBodyStats" id="inputBodyStatsBR">
-        <h2 class="title">Update your body stats</h2>
+        <!-- Title -->
+        <h2 class="title" id="uTitle">Update your body stats</h2>
         <form class="updateBodyStats" id="updateBodyStats" method="POST">
+            <!-- Input Height -->
             <input type="number" placeholder="enter your height" name="bodyStatHeight" id="bodyStatHeight" required>
-            <select name="unitHeight" id="unitHeight">
+            <!-- Unit Height -->
+            <!-- <select name="unitHeight" id="unitHeight">
                 <option value="cm">cm</option>
                 <option value="inches">inches</option>
-            </select><br>
+            </select><br> -->
+            <!-- Input Weight -->
             <input type="number" placeholder="enter your weight" name="bodyStatWeight" id="bodyStatWeight">
-            <select name="unitWeight" id="unitWeight">
+            <!-- Unit Weight -->
+            <!-- <select name="unitWeight" id="unitWeight">
                 <option value="kg">kg</option>
                 <option value="lb">lb</option>
-            </select><br>
+            </select><br> -->
+            <!-- Input Date -->
             <input type="date" placeholder="date" name="bodyStatDate" id="bodyStatDate" min="1970-01-01" max="2021-06-31" required>
-            <button type="button" name="bodyStatsUpdate" value="submit" onclick="updateUserBodyStats()">update stats</button>
+            <br>
+            <!-- Update Button -->
+            <button type="button" id="updateButton" name="bodyStatsUpdate" value="submit" onclick="updateUserBodyStats()">update stats</button>
             <br><br>
         </form>
     </div>
-</div> -->
+</div>
 
 
 {% endblock content %}

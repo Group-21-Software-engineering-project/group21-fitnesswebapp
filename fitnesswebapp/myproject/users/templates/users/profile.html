@@ -12,95 +12,65 @@
         color: #333333;
     }
 
-    #signup {
+    #login-box {
         background-color: rgb(200, 219, 250);
         position: absolute;
-        top: 20%;
-        left: 41%;
+        top: 25%;
+        left: 40%;
         width: 20%;
-        height: 55%;
+        height: 50%;
         margin: auto;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1);
-        border-radius: 5%;
+        border-radius: 15%;
+    }
+    
+    #username-header {
+        font-size: 300%;
+        margin: 4% 0 5% 0;
     }
 
-    #join_header {
-        margin: 10px 0px;
-        font-size: large;
+    #email-header {
+        font-size: 150%;
     }
 
-    #id_username, #id_email, #id_password1, #id_password2 {
-        /* width: 85%;
-        border-left: 0;
-        border-top: 0;
-        border-right: 0;
-        border-bottom: 1px solid rgb(0, 0, 0);
-        outline: none;
-        background: transparent; */
-        width: 100%;
-        padding: 5px 0;
-        margin: 5px 0;
-        border-left: 0;
-        border-top: 0;
-        border-right: 0;
-        border-bottom: 1px solid rgb(0, 0, 0);
-        outline: none;
-        background: transparent;
-        color: black;
+    hr {
+        margin: 0 0 5% 0 auto;
     }
-    .requiredField {
+
+    #login-title {
+        font-size: 125%;
+    }
+
+    label.requiredField {
         float: left;
+        font-size: 125%;
+        margin-top: 2%;
     }
 
-    #hint_id_username {
-        padding-left: 40px;
+    #id_username {
+        margin-top: 2%;
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid black;
+        background: transparent;
+        font-size: 115%;
     }
 
-    #hint_id_password2 {
-        padding-left: 40px;
-    }
-
-    .hiddenInfoBox {
-        position: absolute;
-        bottom: 0px;
-        width: 400px;
-        background: rgb(200, 219, 250);
-        padding: 20px;
-        box-sizing: border-box;
-        border-radius: 4%;
-        visibility: hidden;
-        opacity: 0;
-        transition: 0.5s;
-        transform: translateX(100%) translateY(-150px);
-        align-items: center;
-    }
-
-    .toHide:hover .hiddenInfoBox {
-        visibility: visible;
-        opacity: 1;
-    }
-
-    .qMark {
-        background: white;
-        width: 10%;
-        height: 15%;
-        font-size: x-large;
-        margin: 0px;
-        float: right;
-        border-radius: 50%;
-    }
-
-    ul {
-        padding: 0px;
-        align-items: center;
-        text-align: center;
+    #id_email {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid black;
+        background: transparent;
+        font-size: 110%;
     }
 </style>  
 
 <div id="login-box" class="input-group content-section">
     <!--Accessing the profile variables-->
-    <h2>{{ user.username }}</h2>
-    <p>{{ user.email }}</p><hr>
+    <p id="username-header">{{ user.username }}</p>
+    <p id="email-header">{{ user.email }}</p>
+    <hr>
 
     <!-- Edit Username and email -->
     <form method="POST" enctype="multipart/form-data">
