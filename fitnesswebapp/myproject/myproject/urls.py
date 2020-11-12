@@ -44,7 +44,8 @@ urlpatterns = [
     # exercise app views
     path('exercise/', exercise_views.exercise, name="exercise-page"),
     path('calendar/', exercise_views.CalendarView.as_view(), name="calendar-page"),
-    path('testform/', exercise_views.log, name="test-form"),
+    path('form/', exercise_views.log, name="form-page"),
+    path('form/(?p<exercise_log_id>\d+)/$',exercise_views.log, name="form-edit-page"),
 
     # food tracker app views
     path('foodTracker/', foodTracker_views.foodTracker, name="foodTacker-page"),

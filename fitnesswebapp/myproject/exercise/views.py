@@ -17,7 +17,7 @@ def exercise(request):
 
 class CalendarView(generic.ListView):
     model = exerciseLog
-    template_name = 'exercise/calander.html'
+    template_name = 'exercise/calender.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -35,8 +35,9 @@ class CalendarView(generic.ListView):
         context['prev_month'] = prev_month(d)
         context['next_month'] = next_month(d)
         return context
+        
 
-#buttion to iterate to previous month
+#button to iterate to previous month
 def prev_month(d):
     first = d.replace(day=1)
     prev_month = first - timedelta(days=1)
@@ -44,7 +45,7 @@ def prev_month(d):
     return month
 
 
-#buttion to iterate to next month
+#button to iterate to next month
 def next_month(d):
     days_in_month = calendar.monthrange(d.year, d.month)[1]
     last = d.replace(day=days_in_month)
@@ -71,4 +72,4 @@ def log(request, exercise_log_id = None):
     if request.POST and form.is_valid():
         form.save()
         return redirect('calendar-page')
-    return render(request, 'exercise/formtest.html', {'form':form})
+    return render(request, 'exercise/form.html', {'form':form})
