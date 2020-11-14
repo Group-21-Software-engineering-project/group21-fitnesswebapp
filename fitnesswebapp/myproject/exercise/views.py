@@ -4,12 +4,14 @@ from datetime import date
 import datetime
 import calendar
 from django.shortcuts import render , redirect, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, response
 from django.views import generic
 from django.utils.safestring import mark_safe
 from .forms import ExerciseForm
 from .models import *
 from .utils import Calendar
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 def exercise(request):
@@ -26,7 +28,7 @@ class CalendarView(generic.ListView):
         d = get_date(self.request.GET.get('month', None))
 
         # Instantiate our calendar class with today's year and date
-        cal = Calendar(d.year, d.month)
+        cal = Calendar(d.year, d.month, self.request.user)
 
         # Call the formatmonth method, which returns our calendar as a table
         html_cal = cal.formatmonth(withyear=True)
@@ -61,6 +63,7 @@ def get_date(req_day):
     return datetime.today()
 
 #view for the log a request
+@login_required
 def log(request, exercise_log_id = None):
     instance = exerciseLog()
     if exercise_log_id:
@@ -70,6 +73,8 @@ def log(request, exercise_log_id = None):
 
     form = ExerciseForm(request.POST or None, instance=instance)
     if request.POST and form.is_valid():
-        form.save()
+        your_object = form.save(commit=False)
+        your_object.user = request.user
+        your_object.save()
         return redirect('calendar-page')
     return render(request, 'exercise/form.html', {'form':form})
