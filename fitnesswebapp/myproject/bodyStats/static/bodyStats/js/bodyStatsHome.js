@@ -15,12 +15,13 @@
 function updateUserBodyStats() {
 
     let bodyWeight = document.getElementById('updateBodyStats').elements.namedItem("bodyStatWeight").value;
-    const bodyWeightUnit = document.getElementById('updateBodyStats').elements.namedItem("unitWeight").value;
+    //const bodyWeightUnit = document.getElementById('updateBodyStats').elements.namedItem("unitWeight").value;
     let bodyHeight = document.getElementById('updateBodyStats').elements.namedItem("bodyStatHeight").value;
-    const bodyHeightUnit = document.getElementById('updateBodyStats').elements.namedItem("unitHeight").value;
+    //const bodyHeightUnit = document.getElementById('updateBodyStats').elements.namedItem("unitHeight").value;
     const bodyStatsDate = document.getElementById('updateBodyStats').elements.namedItem("bodyStatDate").value;
 
-    // console.log("Weight: " + bodyWeight + " " + bodyHeightUnit + "\nHeight: " + bodyHeight + " " + bodyWeightUnit + "\nDate: " + bodyStatsDate);
+    //console.log("Weight: " + bodyWeight + " " + bodyHeightUnit + "\nHeight: " + bodyHeight + " " + bodyWeightUnit + "\nDate: " + bodyStatsDate);
+    //console.log("Weight: " + bodyWeight + "\nHeight: " + bodyHeight+ "\nDate: " + bodyStatsDate);
 
     if (bodyHeight <= 135 || bodyHeight >= 200 ) {
         alert("Please enter in a valid height");
@@ -29,7 +30,7 @@ function updateUserBodyStats() {
     if (bodyWeight <= 35 || bodyWeight >= 200) {
         alert("Please enter in a valid weight");
     }
-
+/*
     if (bodyWeightUnit === "lb") {
         const bodyWeightTemp = (bodyWeight * 2.205);
         bodyWeight = bodyWeightTemp.toFixed(2);
@@ -39,7 +40,7 @@ function updateUserBodyStats() {
         const bodyHeightTemp = (bodyHeight * 2.54);
         bodyHeight = bodyHeightTemp.toFixed(2);
     }
-
+*/
     const bodyStatsBMI = calculateBMI(bodyHeight, bodyWeight);
     //console.log(bodyStatsBMI);
 
