@@ -4,6 +4,7 @@
 
 <div class="clearfix">
   <a class="btn btn-info left" href="{% url 'calendar-page' %}?{{ prev_month }}"> Previous Month </a>
+  <a class="btn btn-info center" href="{% url 'form-page' %}"> Create New Log </a>
   <a class="btn btn-info right" href="{% url 'calendar-page' %}?{{ next_month }}"> Next Month </a>
 </div>
 {{ calendar }}

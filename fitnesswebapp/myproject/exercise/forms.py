@@ -8,7 +8,9 @@ class ExerciseForm(ModelForm):
         widgets = {
             'day': DateInput(attrs={'type': 'datetime-local'}, format='%Y-%m-%dT%H:%M')
         }
-        fields = '__all__'
+
+        fields = ('day', 'hours', 'minutes', 'exercise_type', 'notes'
+        )
 
     def __init__(self, *args, **kwargs):
         super(ExerciseForm, self).__init__(*args, **kwargs)
