@@ -7,6 +7,7 @@
     <title>Fitness tracker Food Diary</title>
     <link rel="stylesheet" type="text/css" href="{% static 'foodTracker/css/foodTrackerHome.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'foodTracker/css/navigationBar.css' %}">
+    <script src="{% static 'foodTracker/js/foodTracker.js' %}"></script>
 </head>
 <body>
 <!---Navigation bar-->
@@ -15,7 +16,7 @@
     <a href="{% url 'about-page' %}" class="active">About us</a>
     <a href="#" class="active">Exercise</a>
     <a href="{% url 'bodyStats-page' %}" class="active">Body Stats</a>
-    <a href="#" class="active">Food</a>
+    <a href="{% url 'foodTacker-page' %}" class="active">Food</a>
     <a href="{% url 'profile-page' %}" class="active">Profile</a>
     <a href="{% url 'logout-page' %}" class="active">Logout</a>
 </div>
