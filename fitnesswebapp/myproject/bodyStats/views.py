@@ -10,18 +10,6 @@ def bodyStats(request):
     return render(request, 'bodyStats/bodyStatsHome.html')
 
 
-def bodyStatsHistoryBMI(request):
-    return render(request, 'bodyStats/bodyStatsHistoryBMI.html')
-
-
-def bodyStatsHistoryHeight(request):
-    return render(request, 'bodyStats/bodyStatsHistoryHeight.html')
-
-
-def bodyStatsHistoryWeight(request):
-    return render(request, 'bodyStats/bodyStatsHistoryWeight.html')
-
-
 def updateBodyStats(request):
     if request.method == "POST":
         if request.POST.get('bodyStatHeight') and request.POST.get('unitHeight') and request.POST.get(

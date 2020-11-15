@@ -37,9 +37,6 @@ urlpatterns = [
 
     # bodyStats app views
     path('bodyStats/', bodyStats_views.bodyStats, name="bodyStats-page"),
-    path('bodyStatsHistoryBMI/', bodyStats_views.bodyStatsHistoryBMI, name="bodyStatsHistoryBMI-page"),
-    path('bodyStatsHistoryHeight/', bodyStats_views.bodyStatsHistoryHeight, name="bodyStatsHistoryHeight-page"),
-    path('bodyStatsHistoryWeight/', bodyStats_views.bodyStatsHistoryWeight, name="bodyStatsHistoryWeight-page"),
 
     # exercise app views
     path('exercise/', exercise_views.exercise, name="exercise-page"),

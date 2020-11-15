@@ -1,4 +1,5 @@
 {% extends "bodyStats/bodyStatsBase.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
 
 <!-- <style>
@@ -101,42 +102,22 @@
     <div class="bodyStats" id="bodyStatsTR">
         <h2 id="cTitle">Current stats</h2>
         <!-- Temporarily changing the a's to p's as I can't get margin working on a's -->
-        <!-- <a class="subTitle" id="currentHeight" href="{% url 'bodyStatsHistoryHeight-page' %}">Height: 175 cm</a><br> -->
         <p id="currentHeight">Height: 175 cm</p>
-        <!-- <a class="subTitle" id="currentWeight" href="{% url 'bodyStatsHistoryWeight-page' %}">Weight: 70 kg</a><br> -->
         <p id="currentWeight">Weight: 70 kg</p>
-        <!-- <a class="subTitle" id="currentBMI" href="{% url 'bodyStatsHistoryBMI-page' %}">BMI: 24</a><br> -->
         <p id="currentBMI">BMI: 24</p>
     </div>
 
     <!-- Update Stats (Bottom Right) -->
     <div class="inputBodyStats" id="inputBodyStatsBR">
         <!-- Title -->
-        <h2 class="title" id="uTitle">Update your body stats</h2>
-        <form class="updateBodyStats" id="updateBodyStats" method="POST">
-            <!-- Input Height -->
-            <input type="number" placeholder="enter your height" name="bodyStatHeight" id="bodyStatHeight" min="1" required>
-            <!-- Unit Height -->
-            <!-- <select name="unitHeight" id="unitHeight">
-                <option value="cm">cm</option>
-                <option value="inches">inches</option>
-            </select><br> -->
-            <!-- Input Weight -->
-            <input type="number" placeholder="enter your weight" name="bodyStatWeight" id="bodyStatWeight" min="1" required>
-            <!-- Unit Weight -->
-            <!-- <select name="unitWeight" id="unitWeight">
-                <option value="kg">kg</option>
-                <option value="lb">lb</option>
-            </select><br> -->
-            <!-- Input Date -->
-            <input type="date" placeholder="date" name="bodyStatDate" id="bodyStatDate" min="1970-01-01" max="2021-06-31" required>
-            <!-- Input BMI -->
-            <input type="number" placeholder="BMI" name="bodyStatBMI" id="bodyStatBMI" min="1" required>
-            <br>
-            <!-- Update Button -->
-            <button type="button" id="updateButton" name="bodyStatsUpdate" value="submit" onclick="updateUserBodyStats()">update stats</button>
-            <br><br>
-        </form>
+        <form id="updateBodyStats" class="input-group content-section" method="POST">
+                {% csrf_token %}
+                    <legend class="title" id="uTitle">Update your body stats</legend>
+                    {{ form|crispy }}
+                <div>
+                    <button type="button" id="updateButton" name="bodyStatsUpdate" class="submit-button">update stats</button>
+                </div>
+            </form>
     </div>
 </div>
 
