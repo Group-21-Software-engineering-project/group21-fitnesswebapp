@@ -64,10 +64,10 @@ def get_date(req_day):
 
 #view for the log a request
 @login_required
-def log(request, exercise_log_id = None):
+def log(request, food_log_id = None):
     instance = exerciseLog()
-    if exercise_log_id:
-        instance = get_object_or_404(exerciseLog, pk=exercise_log_id)
+    if food_log_id:
+        instance = get_object_or_404(exerciseLog, pk=food_log_id)
     else:
         instance = exerciseLog()
 

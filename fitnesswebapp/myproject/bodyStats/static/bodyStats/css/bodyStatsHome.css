@@ -78,7 +78,7 @@
         background-color: #828282;
     }
 
-    #bodyStatHeight, #bodyStatWeight {
+    #bodyStatHeight, #bodyStatWeight, #bodyStatBMI {
         width: 75%;
         margin-bottom: 4%;
         height: 4vh;
