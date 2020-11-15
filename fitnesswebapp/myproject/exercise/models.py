@@ -12,6 +12,7 @@ exercise_type_choices = (
     ('bench press','Bench Press'),
     ('sit ups','Sit Ups'),
     ('biceps','Biceps'),
+    ('other','Other'),
 )
 
 #exercise log model.

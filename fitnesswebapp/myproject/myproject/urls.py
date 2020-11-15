@@ -39,10 +39,11 @@ urlpatterns = [
     path('bodyStats/', bodyStats_views.bodyStats, name="bodyStats-page"),
 
     # exercise app views
-    path('exercise/', exercise_views.exercise, name="exercise-page"),
-    path('calendar/', exercise_views.CalendarView.as_view(), name="calendar-page"),
+    #path('exercise/', exercise_views.exercise, name="exercise-page"),
+    path('exercise/', exercise_views.CalendarView.as_view(), name="exercise-page"),
     path('form/', exercise_views.log, name="form-page"),
-    path('form/(?p<exercise_log_id>\d+)/$',exercise_views.log, name="form-edit-page"),
+    path('form/<exercise_log_id>/',exercise_views.log, name="form-edit-page"),
+    path('form/<int:exercise_log_id>/delete/',exercise_views.delete_log, name="form-delete-page"),
 
     # food tracker app views
     path('foodTracker/', foodTracker_views.foodTracker, name="foodTacker-page"),

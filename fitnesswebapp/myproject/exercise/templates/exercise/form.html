@@ -1,17 +1,17 @@
 {% extends 'home/base.html' %}
 {% block content %}
 
-<form id="log-exercise" method="post">
+<form id="log-exercise" method="POST" >
   {% csrf_token %}
     <br><legend id="log-title">Exercise Details</legend><br>
     {{ form }}
     <div>
       <button type="submit" class="submit-button"> Submit </button>
-      <button type="submit" class="submit-button"> Delete </button>
     </div>
     <div class="clearfix">
       <small>
-        <a class="btn btn-info left" href="{% url 'calendar-page' %}"> Back to Calendar </a>
+        <a href="delete/">Delete</a>
+        <a class="btn btn-info left" href="{% url 'exercise-page' %}"> Back to Calendar </a>
       </small>
     </div>
 </form>
@@ -21,7 +21,6 @@ body{
   background-image: url(../static/home/images/loginBackground.png);
   background-repeat: no-repeat;
 }
-
 
 #log-exercise {
   background-color: rgb(200, 219, 250);
@@ -50,8 +49,6 @@ body{
   width: 40%;
   height: 25%;
 }
-
-
 
 </style>
 {% endblock %}
