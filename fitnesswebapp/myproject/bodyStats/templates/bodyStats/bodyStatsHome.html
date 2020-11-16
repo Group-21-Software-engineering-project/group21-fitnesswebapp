@@ -1,18 +1,5 @@
 {% extends "bodyStats/bodyStatsBase.html" %}
-{% load crispy_forms_tags %}
 {% block content %}
-
-<!-- <style>
-    body {
-                background-image: url(../static/home/images/tempBodyStats.jpg);
-                background-repeat: no-repeat;
-                width: 100%;
-                height: 900px;
-                background-size: 100% 100%;
-    }
-</style> -->
-
-<!-- UNCOMMENT WHEN COMPLETE!! -->
 
 <div id="content">
 
@@ -113,9 +100,9 @@
         <form id="updateBodyStats" class="input-group content-section" method="POST">
                 {% csrf_token %}
                     <legend class="title" id="uTitle">Update your body stats</legend>
-                    {{ form|crispy }}
+                    {{ form }}
                 <div>
-                    <button type="button" id="updateButton" name="bodyStatsUpdate" class="submit-button">update stats</button>
+                    <button type="submit" id="updateButton" name="bodyStatsUpdate">update stats</button>
                 </div>
             </form>
     </div>
