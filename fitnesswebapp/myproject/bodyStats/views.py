@@ -31,12 +31,12 @@ def bodyStats(request):
 # return render(request, 'bodyStats/bodyStatsHome.html', {'form': form})
 
 
+@login_required
 def updateStats(request):
+    form = bodyStatsForm(request.POST)
     if request.method == 'POST':
-        form = bodyStatsForm(request.POST)
         if form.is_valid():
             # process data here
-            form.save()
             messages.success(request, f'Body stats have been updated')
             redirect('bodyStats-page')
     return render(request, 'bodyStats/bodyStatsHome.html', {'form': form})

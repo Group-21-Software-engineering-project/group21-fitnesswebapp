@@ -128,6 +128,9 @@
         text-shadow: 1px 1px 1px #ffffff;
     }
 
+    .asteriskField {
+        display: none;
+    }
     /* BELOW IS OLD!! */
 
     /* .bodyStats {
