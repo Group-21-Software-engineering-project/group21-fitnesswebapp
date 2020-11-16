@@ -36,7 +36,7 @@ urlpatterns = [
     path('profile/', user_views.profile, name="profile-page"),
 
     # bodyStats app views
-    path('bodyStats/', bodyStats_views.bodyStats, name="bodyStats-page"),
+    path('bodyStats/', bodyStats_views.updateStats, name="bodyStats-page"),
 
     # exercise app views
     #path('exercise/', exercise_views.exercise, name="exercise-page"),
