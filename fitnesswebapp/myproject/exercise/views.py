@@ -6,11 +6,13 @@ import calendar
 from django.shortcuts import render , redirect, get_object_or_404
 from django.http import HttpResponse, response
 from django.views import generic
+from django.views.generic import DeleteView
 from django.utils.safestring import mark_safe
 from .forms import ExerciseForm
 from .models import *
 from .utils import Calendar
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 # Create your views here.
 
@@ -76,5 +78,14 @@ def log(request, exercise_log_id = None):
         your_object = form.save(commit=False)
         your_object.user = request.user
         your_object.save()
-        return redirect('calendar-page')
+        messages.success(request, f'Exercise log entry successfully created!')
+        return redirect('exercise-page')
     return render(request, 'exercise/form.html', {'form':form})
+
+#delete a log function
+def delete_log(request, exercise_log_id = None):
+    log = get_object_or_404(exerciseLog, pk=exercise_log_id)
+    log.delete()
+    messages.success(request, f'Exercise log entry successfully deleted!')
+    return redirect('exercise-page')
+
