@@ -20,8 +20,6 @@ from home import views as home_views
 from users import views as user_views
 from bodyStats import views as bodyStats_views
 from exercise import views as exercise_views
-from foodTracker import views as foodTracker_views
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -46,8 +44,5 @@ urlpatterns = [
     path('form/', exercise_views.log, name="form-page"),
     path('form/<exercise_log_id>/',exercise_views.log, name="form-edit-page"),
     path('form/<int:exercise_log_id>/delete/',exercise_views.delete_log, name="form-delete-page"),
-
-    # food tracker app views
-    path('foodTracker/', foodTracker_views.foodTracker, name="foodTacker-page"),
 
 ]
