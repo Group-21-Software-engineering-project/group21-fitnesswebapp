@@ -39,21 +39,16 @@ def update_stats(request, update_stats_id=None):
 @login_required
 def get_stats(request):
     current_user = request.user.id
-    # print("The user id is (with current user): " + str(current_user.id))
-    print("The user currently logged in is: " + str(current_user))
-    # data = body_stats_tbl.objects.values('bs_date', 'height', 'weight', 'bmi', 'user')
+    # print("The user currently logged in is: " + str(current_user))
     data = body_stats_tbl.objects.values_list('bs_date', 'height', 'weight', 'bmi', 'user')
-    # data = body_stats_tbl.objects.all()
-    # for current_user in data:
-        # data = data.filter(user_id=current_user)
     bodyStats = {
         'data': data
     }
     print(type(data))
-    for item in data:
-        # print(item)
-        # print(type(item))
-        if item[-1] == current_user:
-            print(item)
-            # print(type(item))
+    # for item in data:
+    #   print(item)
+    #   print(type(item))
+    #    if item[-1] == current_user:
+    #        print(item)
+    #        print(type(item))
     return render(request, 'bodyStats/bodyStatsView.html', bodyStats)
