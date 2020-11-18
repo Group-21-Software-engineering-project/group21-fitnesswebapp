@@ -31,6 +31,7 @@ class CalendarView(generic.ListView):
 
         # Instantiate our calendar class with today's year and date
         cal = Calendar(d.year, d.month, self.request.user)
+        print(self.request.user)
 
         # Call the formatmonth method, which returns our calendar as a table
         html_cal = cal.formatmonth(withyear=True)

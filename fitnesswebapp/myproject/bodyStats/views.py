@@ -35,16 +35,24 @@ def update_stats(request, update_stats_id=None):
         return redirect('bodyStatsUpload-page')
     return render(request, 'bodyStats/bodyStatsUpload.html', {'form': form})
 
-
 @login_required
 def get_stats(request):
-    current_user = request.user
-    print("The user id is (with current user): " + str(current_user.id))
-    # print("The user is (with user): " + user)
+    current_user = request.user.id
+    # print("The user id is (with current user): " + str(current_user.id))
+    print(current_user)
+    # data = body_stats_tbl.objects.values('bs_date', 'height', 'weight', 'bmi', 'user')
+    # data = body_stats_tbl.objects.values_list('bs_date', 'height', 'weight', 'bmi', 'user')
     data = body_stats_tbl.objects.all()
+    for current_user in data:
+        data = data.filter(user_id=current_user)
     bodyStats = {
         'data': data
     }
+    print(type(data))
     for item in data:
-        print(item)
+        # print(item)
+        # print(type(item))
+        if item[-1] == current_user:
+            print(item)
+            print(type(item))
     return render(request, 'bodyStats/bodyStatsView.html', bodyStats)
