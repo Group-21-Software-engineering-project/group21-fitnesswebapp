@@ -17,6 +17,7 @@ def bodyStatsView(request):
     return render(request, 'bodyStats/bodyStatsView.html')
 
 
+# allow user to upload their body stats
 @login_required
 def update_stats(request, update_stats_id=None):
     instance = body_stats_tbl()
@@ -30,11 +31,6 @@ def update_stats(request, update_stats_id=None):
         your_object = form.save(commit=False)
         your_object.user = request.user
         your_object.save()
-        # form = bodyStatsForm(request.POST or None, instance=instance)
-        # form.save()
-            # process data here
-            # userID = request.user
-            # print(userID.id)
         messages.success(request, f'Body stats have been updated')
         return redirect('bodyStatsUpload-page')
     return render(request, 'bodyStats/bodyStatsUpload.html', {'form': form})
@@ -42,6 +38,13 @@ def update_stats(request, update_stats_id=None):
 
 @login_required
 def get_stats(request):
-    redirect('bodyStatsView-page')
-    query_result = body_stats_tbl.objects.all()
-    return render(request, 'bodyStats/bodyStatsView.html', locals())
+    current_user = request.user
+    print("The user id is (with current user): " + str(current_user.id))
+    # print("The user is (with user): " + user)
+    data = body_stats_tbl.objects.all()
+    bodyStats = {
+        'data': data
+    }
+    for item in data:
+        print(item)
+    return render(request, 'bodyStats/bodyStatsView.html', bodyStats)

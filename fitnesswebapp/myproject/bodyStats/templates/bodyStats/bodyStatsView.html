@@ -13,12 +13,14 @@
                 <th>Weight</th>
                 <th>BMI</th>
             </tr>
+            {% for item in data %}
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{ user.bs_date }}</td>
+                <td>{{ user.height }}</td>
+                <td>{{ user.weight }}</td>
+                <td>{{ user.bmi }}</td>
             </tr>
+            {% endfor %}
         </table>
     </div>
 </div>
