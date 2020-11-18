@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from . import models
 from .models import body_stats_tbl
 from django.shortcuts import render, redirect
@@ -18,21 +18,25 @@ def bodyStatsView(request):
 
 
 @login_required
-def update_stats(request):
-    form = bodyStatsForm(request.POST)
+def update_stats(request, update_stats_id=None):
     instance = bodyStatsForm()
-    if request.method == 'POST':
-        if request.POST and form.is_valid():
-            your_object = form.save(commit=False)
-            your_object.user = request.user
-            your_object.save()
-            form = bodyStatsForm(request.POST or None, instance=instance)
-            form.save()
+    if update_stats_id:
+        instance = get_object_or_404(bodyStatsForm, pk=update_stats_id)
+    else:
+        instance = update_stats_id()
+
+    form = bodyStatsForm(request.POST or None, instance=instance)
+    if request.POST and form.is_valid():
+        your_object = form.save(commit=False)
+        your_object.user = request.user
+        your_object.save()
+        # form = bodyStatsForm(request.POST or None, instance=instance)
+        # form.save()
             # process data here
             # userID = request.user
             # print(userID.id)
-            messages.success(request, f'Body stats have been updated')
-            return redirect('bodyStatsUpload-page')
+        messages.success(request, f'Body stats have been updated')
+        return redirect('bodyStatsUpload-page')
     return render(request, 'bodyStats/bodyStatsUpload.html', {'form': form})
 
 
@@ -41,6 +45,3 @@ def get_stats(request):
     redirect('bodyStatsView-page')
     query_result = body_stats_tbl.objects.all()
     return render(request, 'bodyStats/bodyStatsView.html', locals())
-
-
-
