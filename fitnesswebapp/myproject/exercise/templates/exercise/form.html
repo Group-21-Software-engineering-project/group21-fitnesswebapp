@@ -10,15 +10,20 @@
     </div>
     <div class="clearfix">
       <small>
-        <a href="delete/">Delete</a>
-        <a class="btn btn-info left" href="{% url 'exercise-page' %}"> Back to Calendar </a>
+        <!-- only show delete if on edit form page -->
+        {% if request.get_full_path == "/form/"%}
+          <a class="btn btn-info left" href="{% url 'exercise-page' %}"> Back to Calendar </a>
+        {% else %}
+          <a href="delete/">Delete</a>
+          <a class="btn btn-info left" href="{% url 'exercise-page' %}"> Back to Calendar </a>
+        {% endif %}
       </small>
     </div>
 </form>
 
 <style>
 body{
-  background-image: url(../static/home/images/loginBackground.png);
+  background-image: url('/static/home/images/loginBackground.png');
   background-repeat: no-repeat;
 }
 
