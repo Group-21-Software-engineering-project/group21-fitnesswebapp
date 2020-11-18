@@ -19,11 +19,11 @@ def bodyStatsView(request):
 
 @login_required
 def update_stats(request, update_stats_id=None):
-    instance = bodyStatsForm()
+    instance = body_stats_tbl()
     if update_stats_id:
         instance = get_object_or_404(bodyStatsForm, pk=update_stats_id)
     else:
-        instance = update_stats_id()
+        instance = body_stats_tbl()
 
     form = bodyStatsForm(request.POST or None, instance=instance)
     if request.POST and form.is_valid():
