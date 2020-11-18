@@ -17,10 +17,9 @@ def bodyStatsView(request):
     return render(request, 'bodyStats/bodyStatsView.html')
 
 
-# allow user to upload their body stats
-@login_required
+# allow user to upload their body stats to the database table
+@login_required  # users have to be logged in to access the body stats upload page
 def update_stats(request, update_stats_id=None):
-    instance = body_stats_tbl()
     if update_stats_id:
         instance = get_object_or_404(bodyStatsForm, pk=update_stats_id)
     else:
@@ -36,19 +35,13 @@ def update_stats(request, update_stats_id=None):
     return render(request, 'bodyStats/bodyStatsUpload.html', {'form': form})
 
 
-@login_required
+@login_required  # users have to be logged in to access the body stats view page
 def get_stats(request):
-    current_user = request.user.id
-    # print("The user currently logged in is: " + str(current_user))
-    data = body_stats_tbl.objects.values_list('bs_date', 'height', 'weight', 'bmi', 'user')
-    bodyStats = {
+    data = body_stats_tbl.objects.values_list('bs_date', 'height', 'weight', 'bmi', 'user')  # create a variable as an object made up of all of the attributes that are stated
+    bodyStats = {  # turns the variable data which is a querySet to a dictionary
         'data': data
     }
-    print(type(data))
-    # for item in data:
+    # for item in data:  used for testing what the server is getting from the database
     #   print(item)
     #   print(type(item))
-    #    if item[-1] == current_user:
-    #        print(item)
-    #        print(type(item))
     return render(request, 'bodyStats/bodyStatsView.html', bodyStats)
