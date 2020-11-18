@@ -18,7 +18,15 @@
             <!---Checks if logged in or out. Can only access if logged in-->
             {% if user.is_authenticated %}
             <a href="{% url 'exercise-page' %}" class="active">Exercise</a>
-            <a href="{% url 'bodyStats-page' %}" class="active">Body Stats</a>
+            <div class="dropdown">
+                <button class="dropbtn">Body Stats
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{% url 'bodyStatsUpload-page' %}">Upload body stats</a>
+                    <a href="{% url 'bodyStatsView-page' %}">View body stats</a>
+                </div>
+            </div>
             <a href="{% url 'foodTacker-page' %}" class="active">Food</a>
             <a href="{% url 'profile-page' %}" class="active">Profile</a>
             <a href="{% url 'logout-page' %}" class="active">Logout</a>

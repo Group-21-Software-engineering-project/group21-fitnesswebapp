@@ -22,6 +22,7 @@ from bodyStats import views as bodyStats_views
 from exercise import views as exercise_views
 from foodTracker import views as foodTracker_views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -36,7 +37,8 @@ urlpatterns = [
     path('profile/', user_views.profile, name="profile-page"),
 
     # bodyStats app views
-    path('bodyStats/', bodyStats_views.updateStats, name="bodyStats-page"),
+    path('bodyStatsUpload/', bodyStats_views.update_stats, name="bodyStatsUpload-page"),
+    path('bodyStatsView/', bodyStats_views.get_stats, name="bodyStatsView-page"),
 
     # exercise app views
     #path('exercise/', exercise_views.exercise, name="exercise-page"),

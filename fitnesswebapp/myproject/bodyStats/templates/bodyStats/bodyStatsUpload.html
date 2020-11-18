@@ -1,0 +1,31 @@
+{% extends "bodyStats/bodyStatsBase.html" %}
+{% block content %}
+
+<style>
+
+</style>
+<div id="content">
+    <!-- Current Stats (Right) -->
+    <div class="bodyStats" id="bodyStatsTR">
+        <h2 id="cTitle">Current stats</h2>
+        <!-- Temporarily changing the a's to p's as I can't get margin working on a's -->
+        <p id="currentHeight">Height: 175 cm</p>
+        <p id="currentWeight">Weight: 70 kg</p>
+        <p id="currentBMI">BMI: 24</p>
+    </div>
+    <!-- Upload Stats (Left) -->
+    <div class="inputBodyStats" id="inputBodyStatsBR">
+        <!-- Title -->
+        <form id="updateBodyStats" class="input-group content-section" method="POST">
+            <!-- Form to upload body stats -->
+                {% csrf_token %}
+                    <legend class="title" id="uTitle">Update your body stats</legend>
+                    {{ form }}
+                <div>
+                    <button type="submit" id="updateButton" name="bodyStatsUpdate">update stats</button>
+                </div>
+            </form>
+    </div>
+</div>
+
+{% endblock content %}
