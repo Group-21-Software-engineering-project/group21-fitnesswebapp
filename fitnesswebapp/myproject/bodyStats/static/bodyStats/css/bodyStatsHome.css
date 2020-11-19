@@ -53,6 +53,13 @@ tr:nth-child(odd) {
     background-color: #828282;
 }
 
+#uTitle {
+    margin-top: 8%;
+    margin-bottom: 8%;
+    font-size: 300%;
+}
+
+
 /* -----------------------------Styling for current body stats in bodyStatsUpload.html------------------------------ */
 
 #bodyStatsTR {
@@ -65,12 +72,37 @@ tr:nth-child(odd) {
 }
 
 #currentHeight, #currentWeight, #currentBMI {
-    font-size: x-large;
-    margin-top: 5%;
+    font-size: xx-large;
+    margin-top: 15%;
     text-align: center;
 }
 
+#cTitle {
+    margin-top: 8%;
+    margin-bottom: 8%;
+    font-size: 300%;
+}
+
 /* --------------------------Styling for body stats upload the bodyStatsUpload.html----------------------------------*/
+
+#id_bs_date, #id_height, #id_weight, #id_bmi {
+    width: 80%;
+    height: 30px;
+    margin-bottom: 5%;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid black;
+    background: transparent;
+    text-align: center;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-left: 10%;
+    font-size: x-large;
+}
 
 #inputBodyStatsBR {
     float: right;
@@ -111,8 +143,8 @@ tr:nth-child(odd) {
 }
 
 #updateButton {
-    margin-top: 3%;
-    width: 20%;
+    margin-top: 4%;
+    width: 60%;
     height: 4vh;
     text-align: center;
     font-family: 'Bebas Neue', cursive;

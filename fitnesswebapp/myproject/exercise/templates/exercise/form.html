@@ -22,38 +22,57 @@
 </form>
 
 <style>
-body{
-  background-image: url('/static/home/images/loginBackground.png');
-  background-repeat: no-repeat;
-}
+  body{
+    background-image: url('/static/home/images/loginBackground.png');
+    background-repeat: no-repeat;
+  } 
 
-#log-exercise {
-  background-color: rgb(200, 219, 250);
-  position: absolute;
-  top: 25%;
-  left: 40%;
-  width: 20%;
-  height: 50%;
-  margin: auto;
-  border-radius: 15%;
-}
+  #log-exercise {
+    background-color: rgb(200, 219, 250);
+    position: absolute;
+    width: 30%;
+    height: 65%;
+    left: 35%;
+    top: 20%;
+    border-radius: 5%;
+  }
 
-#id_day, #id_hours, #id_minutes, #id_exercise_type, #id_notes {
-  border-radius: 5px;
-  border: 1px solid #17a2b8;
-  outline: none;
-  background: none;
-  padding: 5px;
-  width: 85%;
-  margin-top: 2%;
-  background-color: rgb(200, 219, 250);
-}
+  #log-title {
+    font-size: x-large;
+  }
 
-.submit-button {
-  color: black;
-  width: 40%;
-  height: 25%;
-}
+  #id_day, #id_hours, #id_minutes, #id_exercise_type, #id_notes {
+    width: 90%;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    background: transparent;
+    margin: 5px 0;
+    padding: 5px 0;
+  }
+
+  #id_notes {
+    height: 5%;
+  }
+
+  label {
+    display: block;
+    font-size: xl;
+    float: left;
+    width: 100%;
+    margin-left: 5%;
+    text-align: left;
+    margin-top: 5px;
+  }
+
+  .submit-button {
+    margin-bottom: 4%;
+  }
+
+  .btn-info {
+    font-size: x-large;
+  }
 
 </style>
 {% endblock %}
