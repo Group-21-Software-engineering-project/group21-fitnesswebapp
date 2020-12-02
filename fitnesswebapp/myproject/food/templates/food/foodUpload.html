@@ -1,0 +1,20 @@
+{% extends "home/base.html" %}
+{% block content %}
+
+<div id="content">
+    <!-- Upload Stats (Left) -->
+    <div class="inputFood" id="inputFoodBR">
+        <!-- Title -->
+        <form id="uploadFood" class="input-group content-section" method="POST">
+            <!-- Form to upload body stats -->
+                {% csrf_token %}
+                    <legend class="title" id="uTitle">Upload food</legend>
+                    {{ form }}
+                <div>
+                    <button type="submit" id="updateButton" name="foodUpload">upload food</button>
+                </div>
+            </form>
+    </div>
+</div>
+
+{% endblock content %}

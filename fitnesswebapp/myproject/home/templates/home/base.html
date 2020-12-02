@@ -25,6 +25,10 @@
                     <a href="{% url 'exercise-page' %}">Exercise Calendar</a>
                     <a href="{% url 'form-page' %}">Create Exercise Log</a>
                 </div>
+                <div class="dropdown-content">
+                    <a href="{% url 'foodUpload-page' %}">Exercise Calendar</a>
+                    <a href="{% url 'foodView-page' %}">Create Exercise Log</a>
+                </div>
             </div>
             <div class="dropdown">
                 <button class="dropbtn">Body Stats
@@ -33,6 +37,15 @@
                 <div class="dropdown-content">
                     <a href="{% url 'bodyStatsUpload-page' %}">Upload body stats</a>
                     <a href="{% url 'bodyStatsView-page' %}">View body stats</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Food tracker
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{% url 'foodUpload-page' %}">Upload food</a>
+                    <a href="{% url 'foodView-page' %}">View food</a>
                 </div>
             </div>
             <a href="{% url 'profile-page' %}" class="active">Profile</a>

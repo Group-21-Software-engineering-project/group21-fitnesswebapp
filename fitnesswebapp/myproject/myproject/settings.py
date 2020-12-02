@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'bodyStats.apps.BodyStatsConfig',
     'exercise.apps.ExerciseConfig',
+    'food.apps.FoodConfig',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
