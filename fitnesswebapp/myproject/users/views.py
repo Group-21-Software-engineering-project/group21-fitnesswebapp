@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm #imports django forms
 from django.contrib import messages
 from .forms import UserSignUpForm, UserUpdateForm
 from django.contrib.auth.decorators import login_required #checks if users are logged in
-
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -39,3 +39,14 @@ def profile(request):
     }
 
     return render(request, 'users/profile.html', context)
+
+#delete profile view
+def deleteProfile(request, user_id = None):
+    currentUser = get_object_or_404(User, pk=user_id) #get current user
+
+    if request.method == 'POST':    #delete user and teturn to homepage
+        currentUser.delete()
+        messages.success(request, f'Account Successfully Deleted')
+        return redirect('/')
+
+    return render(request, 'users/profile.html', {'currentUser': currentUser}) #return to profile if method isnt POST

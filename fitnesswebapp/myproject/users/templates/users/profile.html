@@ -82,6 +82,12 @@
             <button type="submit" class="submit-button">Update</button>
         </div>
     </form>
+
+    <!-- delete button sends request to delete view in views.py -->
+    <form method="POST" action="{% url 'profile-delete-page' user.id %}">
+        {% csrf_token %}
+        <button type="submit" class="alert-button">Delete Account</button>
+    </form>
 </div>
 
 
