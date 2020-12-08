@@ -5,18 +5,18 @@
     <!-- Table -->
     <div id="tableDivL">
         <table id="table">
-            <tr>
-                <th>Date</th>
-                <th>Name</th>
-                <th>Calories</th>
-                <th>Weight</th>
-                <th>Fat</th>
-                <th>Protein</th>
-                <th>Carbohydrates</th>
+            <tr id="head-row">
+                <th id="date-head">Date</th>
+                <th id="name-head">Name</th>
+                <th id="calories-head">Calories</th>
+                <th id="weight-head">Weight</th>
+                <th id="fat-head">Fat</th>
+                <th id="protein-head">Protein</th>
+                <th id="carbs-head">Carbohydrates</th>
             </tr>
             {% for item in data %}
             {% if item.7 == user.id %}
-            <tr>
+            <tr id="data-row">
                 <td>{{ item.0 }}</td>
                 <td>{{ item.1 }}</td>
                 <td>{{ item.2 }}</td>
@@ -30,5 +30,54 @@
         </table>
     </div>
 </div>
+
+<style>
+    body {
+        background-color: rgb(126, 125, 125);
+    }
+    #table {
+        height: 100%;
+        width: 100%;
+        background-color: rgb(126, 125, 125);
+    }
+
+    #head-row {
+        height: 8vh;
+    }
+
+    #date-head {
+        width: 15%;
+    }
+
+    #name-head {
+        width: 15%;
+    }
+
+    #calories-head, #weight-head, #fat-head, #protein-head, #carbs-head {
+        width: 12%;
+    }
+
+    #data-row {
+        height: 4vh;
+        font-size: 125%;
+    }
+
+    tr:nth-child(even) {
+        background-color: #656565;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #828282;
+    }
+
+    td {
+        margin-top: 20vh;
+        height: 5vh;
+    }
+
+    th {
+        font-size: 1.5em;
+    }
+</style>
 
 {% endblock content %}
