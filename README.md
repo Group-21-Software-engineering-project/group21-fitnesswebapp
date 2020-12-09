@@ -26,5 +26,5 @@ Mac
 8)  Python manage.py runserver (or) Python3 manage.py runserver
 9)  Go to http://localhost:8000/ to view the site.
 
-This web application include use of the third party libraries django, django-cripsy-forms, bootstrap
+This web application includes the use of these third party libraries django, django-cripsy-forms, bootstrap
 
