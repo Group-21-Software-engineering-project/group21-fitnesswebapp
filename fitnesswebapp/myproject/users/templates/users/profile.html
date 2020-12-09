@@ -13,23 +13,24 @@
     }
 
     #login-box {
-        background-color: rgb(200, 219, 250);
+        background-color: lightgrey;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
         position: absolute;
-        top: 25%;
-        left: 40%;
-        width: 20%;
-        height: 50%;
+        top: 20%;
+        left: 37.5%;
+        width: 25%;
+        height: 60%;
         margin: auto;
         border-radius: 5%;
     }
     
     #username-header {
-        font-size: 300%;
+        font-size: 2em;
         margin: 4% 0 5% 0;
     }
 
     #email-header {
-        font-size: 150%;
+        font-size: 1.5em;
     }
 
     hr {
@@ -65,6 +66,12 @@
         background: transparent;
         font-size: 110%;
     }
+
+    #delete-button {
+        margin-top: 3vh;
+        width: 80%;
+        height: 5vh;
+    }
 </style>  
 
 <div id="login-box" class="input-group content-section">
@@ -86,7 +93,7 @@
     <!-- delete button sends request to delete view in views.py -->
     <form method="POST" action="{% url 'profile-delete-page' user.id %}">
         {% csrf_token %}
-        <button type="submit" class="alert-button">Delete Account</button>
+        <button id="delete-button" type="submit" class="alert-button">Delete Account</button>
     </form>
 </div>
 

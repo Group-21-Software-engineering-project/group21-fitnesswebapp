@@ -23,23 +23,57 @@ body {
 .navigationBar .icon {
     display: none;
 }
-@media screen and (max-width: 600px) {
-    .navigationBar a:not(:first-child) {display: none;}
-    .navigationBar a.icon {
-        float: right;
+
+/******************************* New NavBar Max Width ********************************/
+@media only screen and (max-width: 674px) {
+    .navigationBar {
+        display: none;
+    }
+
+    #toggle-button {
         display: block;
+        margin-top: 30px;
     }
 }
-@media screen and (max-width: 600px) {
-    .navigationBar.responsive {position: relative;}
-    .navigationBar.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    .navigationBar.responsive a {
-        float: none;
+
+@media only screen and (min-width: 675px) {
+    .navigationBar {
         display: block;
-        text-align: left;
     }
+
+    #toggle-button {
+        display: none;
+    }
+
+    #menu-div {
+        display: none;
+    }
+}
+
+#toggle-button {
+    width: 40px;
+    height: 40px;
+    font-size: x-large;
+    background-color: darkgray;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 0;
+}
+
+#menu-div {
+    width: 200px;
+    height: 460px;
+    background-color: darkgray;
+    display: none;
+    position: fixed;
+    padding-left: 25px;
+    padding-top: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#menu-buttons, .menu-buttons {
+    margin-top: 5px;
+    color: white;
+    display: block;
 }
