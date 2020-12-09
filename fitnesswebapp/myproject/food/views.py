@@ -4,6 +4,7 @@ from .models import food_tbl
 from django.shortcuts import render, redirect
 from .forms import foodForm
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
 
 
 # Create your views here.
@@ -40,3 +41,6 @@ def view_food(request):
         'data': data
     }
     return render(request, 'food/foodView.html', food)
+
+
+
