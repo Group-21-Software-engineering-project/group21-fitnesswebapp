@@ -61,10 +61,11 @@ tr:nth-child(odd) {
 
 
 /* -----------------------------Styling for current body stats in bodyStatsUpload.html------------------------------ */
+/*
 
 #bodyStatsTR {
     background-color: #656565;
-    float: right;
+    float: none;
     width: 50%;
     height: 100vh;
     margin: 0;
@@ -83,6 +84,7 @@ tr:nth-child(odd) {
     font-size: 300%;
 }
 
+*/
 /* --------------------------Styling for body stats upload the bodyStatsUpload.html----------------------------------*/
 
 #id_bs_date, #id_height, #id_weight, #id_bmi {
