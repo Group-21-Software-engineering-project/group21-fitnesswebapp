@@ -11,28 +11,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'bodyStats/css/navigationBar.css' %}">
 </head>
 <body>
-<!-- Menu Button -->
-<input type="button" id="toggle-button" onclick="showMenu(); toggleMenu()" value="+">
-<div id="menu-div">
-    <a href="/" id="menu-buttons" class="active">Home</a><br>
-    <a href="{% url 'about-page' %}" id="menu-buttons" class="active">About us</a><br>
-    <!---Checks if logged in or out. Can only access if logged in-->
-    {% if user.is_authenticated %}
-    <a href="{% url 'exercise-page' %}" class="menu-buttons">Exercise Calendar</a><br>
-    <a href="{% url 'form-page' %}" class="menu-buttons">Create Exercise Log</a><br>
-    <a href="{% url 'bodyStatsUpload-page' %}" class="menu-buttons">Upload body stats</a><br>
-    <a href="{% url 'bodyStatsView-page' %}" class="menu-buttons">View body stats</a><br>
-    <a href="{% url 'foodUpload-page' %}" class="menu-buttons">Upload food</a><br>
-    <a href="{% url 'foodView-page' %}" class="menu-buttons">View food</a><br>
-    <a href="{% url 'profile-page' %}" id="menu-buttons" class="active">Profile</a><br>
-    <a href="{% url 'logout-page' %}" id="menu-buttons" class="active">Logout</a><br>
-
-    {% else %}
-    <a href="{% url 'login-page' %}" class="active">Login</a><br>
-    <a href="{% url 'signUp-page' %}" class="active">Create Account</a><br>
-    {% endif %}
-</div>
-
 <!---Navigation bar-->
 <div class="navigationBar" id="navigationBar">
     <a href="/" class="active">Home</a>

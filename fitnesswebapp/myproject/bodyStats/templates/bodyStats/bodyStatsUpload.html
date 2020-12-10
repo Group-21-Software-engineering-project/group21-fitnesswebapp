@@ -5,6 +5,27 @@
 
 </style>
 <div id="content">
+    <!-- Menu Button -->
+    <input type="button" id="toggle-button" onclick="showMenu(); toggleMenu()" value="+">
+    <div id="menu-div">
+        <a href="/" id="menu-buttons" class="active">Home</a><br>
+        <a href="{% url 'about-page' %}" id="menu-buttons" class="active">About us</a><br>
+        <!---Checks if logged in or out. Can only access if logged in-->
+        {% if user.is_authenticated %}
+        <a href="{% url 'exercise-page' %}" class="menu-buttons">Exercise Calendar</a><br>
+        <a href="{% url 'form-page' %}" class="menu-buttons">Create Exercise Log</a><br>
+        <a href="{% url 'bodyStatsUpload-page' %}" class="menu-buttons">Upload body stats</a><br>
+        <a href="{% url 'bodyStatsView-page' %}" class="menu-buttons">View body stats</a><br>
+        <a href="{% url 'foodUpload-page' %}" class="menu-buttons">Upload food</a><br>
+        <a href="{% url 'foodView-page' %}" class="menu-buttons">View food</a><br>
+        <a href="{% url 'profile-page' %}" id="menu-buttons" class="active">Profile</a><br>
+        <a href="{% url 'logout-page' %}" id="menu-buttons" class="active">Logout</a><br>
+    
+        {% else %}
+        <a href="{% url 'login-page' %}" class="active">Login</a><br>
+        <a href="{% url 'signUp-page' %}" class="active">Create Account</a><br>
+        {% endif %}
+    </div>
     <!-- Upload Stats -->
     <div class="inputBodyStats" id="inputBodyStatsBR">
         <!-- Title -->
@@ -71,45 +92,93 @@
         margin: 0;
         padding: 0;
         background-color: rgb(126, 125, 125);
-        }
+    }
+    #uploadFood {
+        width: 80%;
+        margin-left: 10%;
+        background-color: lightgrey;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
+        height: 625px;
+        margin-top: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 20px;
+    }
 
-        #updateBodyStats {
-            width: 80%;
-            margin-left: 10%;
-            background-color: lightgrey;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
-            height: 625px;
-            margin-top: 0;
-            padding: 0;
-            border: 0;
-            border-radius: 20px;
-        }
+    #uTitle {
+        font-size: 1.75em;
+        margin-top: 3vh;
+    }
 
-        #uTitle {
-            font-size: 1.75em;
-            margin-top: 3vh;
-        }
+    #id_food_date, #id_food_calories, #id_food_weight, #id_food_fat, #id_food_protein, #id_food_carbohydrates {
+        width: 80%;
+        border-left: 0;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 1px solid black;
+        background: transparent;
+        margin-top: 1vh;
+        margin-left: 0;
+    }
 
-        label {
-            width: 100%;
-            text-align: center;
-            margin-top: 2.5vh;
-            margin-left: 0;
-            float: left;
-            font-size: 1.25em;
-        }
+    #id_food_name {
+        margin-left: 0;
+        width: 80%;
+        height: 10vh;
+        border-radius: 10px;
+        border: 0;
+        resize: none;
+    }
 
-        #updateButton {
-            margin-top: 3vh;
-            width: 50%;
-            height: 4vh;
-            cursor: pointer;
-            border-radius: 8px;
-            border: 0;
-        }
+    label {
+        width: 100%;
+        text-align: center;
+        margin-top: 2.5vh;
+        margin-left: 0;
+        float: left;
+        font-size: 1.25em;
+    }
+
+    #updateButton {
+        margin-top: 3vh;
+        width: 50%;
+        height: 4vh;
+        cursor: pointer;
+        border-radius: 8px;
+        border: 0;
+    }
     }
 
 
 </style>
+
+<script>
+    function showMenu() {
+                var element = document.getElementById("toggle-button");
+                var div = document.getElementById("menu-div");
+                if (element.value == "+") {
+                    element.value = "-";
+                    element.style.borderBottomRightRadius = "0px";
+                    element.style.border = "0";
+                    div.style.display = "block";
+                } else {
+                    element.value = "+";
+                    div.style.display = "none";
+                    element.style.borderBottomRightRadius = "20px";
+                    element.style.border = "0";
+                }
+            }
+
+    function toggleMenu() {
+    var toggleMenu = document.getElementById("toggle-button").value;
+    var inputBox = document.getElementById("inputBodyStatsBR");
+    if (toggleMenu == "+") {
+        inputBox.style.display = "block";
+    } else {
+        inputBox.style.display = "none";
+    }
+    }
+    
+</script>
 
 {% endblock content %}
