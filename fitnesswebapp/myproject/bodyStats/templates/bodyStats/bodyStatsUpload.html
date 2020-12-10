@@ -5,15 +5,7 @@
 
 </style>
 <div id="content">
-    <!-- Current Stats (Right) -->
-    <div class="bodyStats" id="bodyStatsTR">
-        <h2 id="cTitle">Current stats</h2>
-        <!-- Temporarily changing the a's to p's as I can't get margin working on a's -->
-        <p id="currentHeight">Height: cm</p>
-        <p id="currentWeight">Weight: kg</p>
-        <p id="currentBMI">BMI: </p>
-    </div>
-    <!-- Upload Stats (Left) -->
+    <!-- Upload Stats -->
     <div class="inputBodyStats" id="inputBodyStatsBR">
         <!-- Title -->
         <form id="updateBodyStats" class="input-group content-section" method="POST">
@@ -27,5 +19,97 @@
             </form>
     </div>
 </div>
+
+<style>
+    @media only screen and (min-width: 675px) {
+        body {
+            border: 0;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(126, 125, 125);
+        }
+
+        #updateBodyStats {
+            width: 40%;
+            margin-left: 30%;
+            background-color: lightgrey;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
+            height: 90vh;
+            margin-top: 2vh;
+            padding: 0;
+            border: 0;
+            border-radius: 20px;
+        }
+
+        #uTitle {
+            font-size: 1.75em;
+            margin-top: 3vh;
+        }
+
+        label {
+            width: 100%;
+            text-align: center;
+            margin-top: 2.5vh;
+            margin-left: 0;
+            float: left;
+            font-size: 1.25em;
+        }
+
+        #updateButton {
+            margin-top: 3vh;
+            width: 50%;
+            height: 4vh;
+            cursor: pointer;
+            border-radius: 8px;
+            border: 0;
+        }
+    }
+
+    @media only screen and (max-width: 674px) {
+        body {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        background-color: rgb(126, 125, 125);
+        }
+
+        #updateBodyStats {
+            width: 80%;
+            margin-left: 10%;
+            background-color: lightgrey;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
+            height: 625px;
+            margin-top: 0;
+            padding: 0;
+            border: 0;
+            border-radius: 20px;
+        }
+
+        #uTitle {
+            font-size: 1.75em;
+            margin-top: 3vh;
+        }
+
+        label {
+            width: 100%;
+            text-align: center;
+            margin-top: 2.5vh;
+            margin-left: 0;
+            float: left;
+            font-size: 1.25em;
+        }
+
+        #updateButton {
+            margin-top: 3vh;
+            width: 50%;
+            height: 4vh;
+            cursor: pointer;
+            border-radius: 8px;
+            border: 0;
+        }
+    }
+
+
+</style>
 
 {% endblock content %}
