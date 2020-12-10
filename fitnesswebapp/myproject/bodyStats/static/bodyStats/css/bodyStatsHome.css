@@ -53,13 +53,6 @@ tr:nth-child(odd) {
     background-color: #828282;
 }
 
-#uTitle {
-    margin-top: 8%;
-    margin-bottom: 8%;
-    font-size: 300%;
-}
-
-
 /* -----------------------------Styling for current body stats in bodyStatsUpload.html------------------------------ */
 /*
 
@@ -106,13 +99,14 @@ label {
     font-size: x-large;
 }
 
-#inputBodyStatsBR {
+/*#inputBodyStatsBR {
     float: right;
     width: 50%;
     height: 100vh;
     margin: 0%;
     background-color: #828282;
 }
+*/
 
 #bodyStatHeight, #bodyStatWeight, #bodyStatBMI {
     width: 75%;
