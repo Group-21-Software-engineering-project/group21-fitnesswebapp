@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.forms import UserCreationForm #imports django forms
+from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm #imports django forms
 from django.contrib import messages
 from .forms import UserSignUpForm, UserUpdateForm
 from django.contrib.auth.decorators import login_required #checks if users are logged in
 from django.contrib.auth.models import User
+from django.contrib.auth.views import PasswordChangeView
+from django.urls import reverse_lazy
 
 # Create your views here.
 
@@ -50,3 +52,7 @@ def deleteProfile(request, user_id = None):
         return redirect('/')
 
     return render(request, 'users/profile.html', {'currentUser': currentUser}) #return to profile if method isnt POST
+
+class PasswordsChangeView(PasswordChangeView):
+    form_class = PasswordChangeForm
+    success_url = reverse_lazy('profile-page')

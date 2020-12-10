@@ -67,11 +67,6 @@
         font-size: 110%;
     }
 
-    #delete-button {
-        margin-top: 3vh;
-        width: 80%;
-        height: 5vh;
-    }
 </style>  
 
 <div id="login-box" class="input-group content-section">
@@ -90,10 +85,17 @@
         </div>
     </form>
 
+
+    <form method="POST" action="{% url 'profile-password-page' %}">
+    {% csrf_token %}
+        <button id="password-button" type="submit" class="submit-button">Change Password</button>
+    </form>
+
+
     <!-- delete button sends request to delete view in views.py -->
     <form method="POST" action="{% url 'profile-delete-page' user.id %}">
-        {% csrf_token %}
-        <button id="delete-button" type="submit" class="alert-button">Delete Account</button>
+    {% csrf_token %}
+        <button id="delete-button" type="submit" class="submit-button">Delete Account</button>
     </form>
 </div>
 

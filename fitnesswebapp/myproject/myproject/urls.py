@@ -35,6 +35,7 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name="users/logout.html"), name="logout-page"),
     path('profile/', user_views.profile, name="profile-page"),
     path('profile/<user_id>/delete/', user_views.deleteProfile, name="profile-delete-page"),
+    path('password/', user_views.PasswordsChangeView.as_view(template_name="users/changepassword.html"), name="profile-password-page"),
 
     # bodyStats app views
     path('bodyStatsUpload/', bodyStats_views.update_stats, name="bodyStatsUpload-page"),
