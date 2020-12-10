@@ -11,7 +11,7 @@ from datetime import datetime
 
 class food_tbl(models.Model):
     food_entry_id = models.AutoField('food entry id', default=datetime.now, primary_key=True, unique=True, db_index=True, null=False)
-    food_date = models.DateTimeField('date recorded')
+    food_date = models.DateTimeField('date recorded', default=datetime.now)
     food_name = models.TextField('food name')
     food_calories = models.IntegerField('food calories', validators=[MinValueValidator(1), MaxValueValidator(3000)])
     food_weight = models.IntegerField('food weight', validators=[MinValueValidator(1), MaxValueValidator(3000)])
