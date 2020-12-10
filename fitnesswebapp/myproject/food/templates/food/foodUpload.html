@@ -146,4 +146,17 @@
     
 </style>
 
+<script>
+    function toggleMenu() {
+    var toggleMenu = document.getElementById("toggle-button").value;
+    var inputBox = document.getElementById("inputFoodBR");
+    if (toggleMenu == "+") {
+        inputBox.style.display = "block";
+    } else {
+        inputBox.style.display = "none";
+    }
+    }
+    
+</script>
+
 {% endblock content %}

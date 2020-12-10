@@ -22,59 +22,130 @@
 </form>
 
 <style>
-  body{
-    background-image: url('/static/home/images/loginBackground.png');
-    background-repeat: no-repeat;
-  } 
+  @media only screen and (min-width: 675px) {
+      body{
+      background-image: url('/static/home/images/loginBackground.png');
+      background-repeat: no-repeat;
+    } 
 
-  #log-exercise {
-    /* background-color: rgb(200, 219, 250); */
-    background-color: lightgrey;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    width: 30%;
-    height: 65%;
-    left: 35%;
-    top: 20%;
-    border-radius: 5%;
+    #log-exercise {
+      /* background-color: rgb(200, 219, 250); */
+      background-color: lightgrey;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      width: 30%;
+      height: 65%;
+      left: 35%;
+      top: 20%;
+      border-radius: 5%;
+    }
+
+    #log-title {
+      font-size: x-large;
+    }
+
+    #id_day, #id_hours, #id_minutes, #id_exercise_type, #id_notes {
+      width: 90%;
+      border-left: 0;
+      border-right: 0;
+      border-top: 0;
+      border-bottom: 1px solid rgb(0, 0, 0);
+      background: transparent;
+      margin: 5px 0;
+      padding: 5px 0;
+    }
+
+    #id_notes {
+      height: 5%;
+    }
+
+    label {
+      display: block;
+      font-size: xl;
+      float: left;
+      width: 100%;
+      margin-left: 5%;
+      text-align: left;
+      margin-top: 5px;
+    }
+
+    .submit-button {
+      margin-bottom: 4%;
+    }
+
+    .btn-info {
+      font-size: x-large;
+    }
   }
+  
+  @media only screen and (max-width: 674px) {
+    body{
+      background-image: url('/static/home/images/loginBackground.png');
+      background-repeat: no-repeat;
+    } 
 
-  #log-title {
-    font-size: x-large;
-  }
+    #log-exercise {
+      /* background-color: rgb(200, 219, 250); */
+      background-color: lightgrey;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      width: 80%;
+      height: 78%;
+      left: 10%;
+      top: 12%;
+      border-radius: 5%;
+    }
 
-  #id_day, #id_hours, #id_minutes, #id_exercise_type, #id_notes {
-    width: 90%;
-    border-left: 0;
-    border-right: 0;
-    border-top: 0;
-    border-bottom: 1px solid rgb(0, 0, 0);
-    background: transparent;
-    margin: 5px 0;
-    padding: 5px 0;
-  }
+    #log-title {  
+      font-size: x-large;
+    }
 
-  #id_notes {
-    height: 5%;
-  }
+    #id_day, #id_hours, #id_minutes, #id_exercise_type, #id_notes {
+      width: 90%;
+      border-left: 0;
+      border-right: 0;
+      border-top: 0;
+      border-bottom: 1px solid rgb(0, 0, 0);
+      background: transparent;
+      margin: 5px 0;
+      padding: 5px 0;
+    }
 
-  label {
-    display: block;
-    font-size: xl;
-    float: left;
-    width: 100%;
-    margin-left: 5%;
-    text-align: left;
-    margin-top: 5px;
-  }
+    #id_notes {
+      height: 5%;
+    }
 
-  .submit-button {
-    margin-bottom: 4%;
-  }
+    label {
+      display: block;
+      font-size: xl;
+      float: left;
+      width: 100%;
+      margin-left: 5%;
+      text-align: left;
+      margin-top: 5px;
+    }
 
-  .btn-info {
-    font-size: x-large;
+    .submit-button {
+      margin-bottom: 4%;
+    }
+
+    .btn-info {
+      font-size: large;
+    }
   }
 
 </style>
+
+<script>
+  function toggleMenu() {
+  var toggleMenu = document.getElementById("toggle-button").value;
+  var inputBox = document.getElementById("log-exercise");
+  if (toggleMenu == "+") {
+      inputBox.style.display = "block";
+  } else {
+      inputBox.style.display = "none";
+  }
+  }
+  
+</script>
 {% endblock %}

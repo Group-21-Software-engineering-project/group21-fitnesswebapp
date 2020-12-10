@@ -54,7 +54,7 @@
         </div>
 
         <!-- Menu Button -->
-        <input type="button" id="toggle-button" onclick="showMenu()" value="+">
+        <input type="button" id="toggle-button" onclick="showMenu(); toggleMenu()" value="+">
         <div id="menu-div">
             <a href="/" id="menu-buttons" class="active">Home</a><br>
             <a href="{% url 'about-page' %}" id="menu-buttons" class="active">About us</a><br>

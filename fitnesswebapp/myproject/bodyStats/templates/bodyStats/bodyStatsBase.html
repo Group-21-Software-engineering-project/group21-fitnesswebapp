@@ -11,6 +11,28 @@
     <link rel="stylesheet" type="text/css" href="{% static 'bodyStats/css/navigationBar.css' %}">
 </head>
 <body>
+<!-- Menu Button -->
+<input type="button" id="toggle-button" onclick="showMenu(); toggleMenu()" value="+">
+<div id="menu-div">
+    <a href="/" id="menu-buttons" class="active">Home</a><br>
+    <a href="{% url 'about-page' %}" id="menu-buttons" class="active">About us</a><br>
+    <!---Checks if logged in or out. Can only access if logged in-->
+    {% if user.is_authenticated %}
+    <a href="{% url 'exercise-page' %}" class="menu-buttons">Exercise Calendar</a><br>
+    <a href="{% url 'form-page' %}" class="menu-buttons">Create Exercise Log</a><br>
+    <a href="{% url 'bodyStatsUpload-page' %}" class="menu-buttons">Upload body stats</a><br>
+    <a href="{% url 'bodyStatsView-page' %}" class="menu-buttons">View body stats</a><br>
+    <a href="{% url 'foodUpload-page' %}" class="menu-buttons">Upload food</a><br>
+    <a href="{% url 'foodView-page' %}" class="menu-buttons">View food</a><br>
+    <a href="{% url 'profile-page' %}" id="menu-buttons" class="active">Profile</a><br>
+    <a href="{% url 'logout-page' %}" id="menu-buttons" class="active">Logout</a><br>
+
+    {% else %}
+    <a href="{% url 'login-page' %}" class="active">Login</a><br>
+    <a href="{% url 'signUp-page' %}" class="active">Create Account</a><br>
+    {% endif %}
+</div>
+
 <!---Navigation bar-->
 <div class="navigationBar" id="navigationBar">
     <a href="/" class="active">Home</a>
@@ -104,6 +126,117 @@
 
     .dropdown:hover .dropdown-content {
         display: block;
+    }
+    @media only screen and (min-width: 675px) {
+        .dropdown {
+        float: left;
+        overflow: hidden;
+    }
+
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+
+    .navbar a:hover, .dropdown:hover .dropbtn {
+        background-color: white;
+        color: #333333;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    }
+    
+    @media only screen and (max-width: 674px) {
+        body {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        background-color: rgb(126, 125, 125);
+    }
+    #uploadFood {
+        width: 80%;
+        margin-left: 10%;
+        background-color: lightgrey;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
+        height: 625px;
+        margin-top: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 20px;
+    }
+
+    #uTitle {
+        font-size: 1.75em;
+        margin-top: 3vh;
+    }
+
+    #id_food_date, #id_food_calories, #id_food_weight, #id_food_fat, #id_food_protein, #id_food_carbohydrates {
+        width: 80%;
+        border-left: 0;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 1px solid black;
+        background: transparent;
+        margin-top: 1vh;
+        margin-left: 0;
+    }
+
+    #id_food_name {
+        margin-left: 0;
+        width: 80%;
+        height: 10vh;
+        border-radius: 10px;
+        border: 0;
+        resize: none;
+    }
+
+    label {
+        width: 100%;
+        text-align: center;
+        margin-top: 2.5vh;
+        margin-left: 0;
+        float: left;
+        font-size: 1.25em;
+    }
+
+    #updateButton {
+        margin-top: 3vh;
+        width: 50%;
+        height: 4vh;
+        cursor: pointer;
+        border-radius: 8px;
+        border: 0;
+    }
     }
 </style>
 </body>

@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0;
     background-color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
@@ -87,5 +87,86 @@ body {
 }
 
 .dropdown:hover .dropdown-content {
+    display: block;
+} */
+
+body {
+    margin: 0;
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navigationBar {
+    overflow: hidden;
+    background-color: #333333;
+}
+.navigationBar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.navigationBar a:hover {
+    background-color: #ffffff;
+    color: #333333;
+}
+.navigationBar .icon {
+    display: none;
+}
+
+/******************************* New NavBar Max Width ********************************/
+@media only screen and (max-width: 674px) {
+    .navigationBar {
+        display: none;
+    }
+
+    #toggle-button {
+        display: block;
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (min-width: 675px) {
+    .navigationBar {
+        display: block;
+        
+    }
+
+    #toggle-button {
+        display: none;
+    }
+
+    #menu-div {
+        display: none;
+    }
+}
+
+#toggle-button {
+    width: 40px;
+    height: 40px;
+    font-size: x-large;
+    background-color: darkgray;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 0;
+}
+
+#menu-div {
+    width: 200px;
+    height: 460px;
+    background-color: darkgray;
+    display: none;
+    position: fixed;
+    padding-left: 25px;
+    padding-top: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#menu-buttons, .menu-buttons {
+    margin-top: 5px;
+    color: white;
     display: block;
 }
