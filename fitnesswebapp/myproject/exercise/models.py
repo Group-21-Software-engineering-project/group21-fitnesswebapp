@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 
@@ -18,8 +19,8 @@ exercise_type_choices = (
 #exercise log model.
 class exerciseLog(models.Model):
     day = models.DateTimeField(default=datetime.now, blank=True)
-    hours = models.FloatField()
-    minutes = models.FloatField()
+    hours = models.FloatField(validators=[MinValueValidator(0) ,MaxValueValidator(24)])
+    minutes = models.FloatField(validators=[MinValueValidator(0) ,MaxValueValidator(59)])
     exercise_type = models.CharField(max_length=100, choices=exercise_type_choices, default='Cardio')
     notes = models.TextField()
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
